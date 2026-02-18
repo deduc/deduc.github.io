@@ -1,20 +1,482 @@
-<!doctype html>
-<html lang="es" data-critters-container>
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>CV - Iván Developer</title>
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-<style>*{box-sizing:border-box;font-family:monospace;transition:.2s}body{background-color:snow}</style><link rel="stylesheet" href="styles.d0d1fff901659541.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.d0d1fff901659541.css"></noscript></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iván Gómez Calvo · Desarrollador de Software</title>
+    <style>
+        /* ---------- RESET PROFESIONAL ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        /* ---------- VARIABLES (PALETA CORPORATIVA) ---------- */
+        :root {
+            --fondo: #f8fafc;
+            --superficie: #ffffff;
+            --texto-principal: #0b1e33;       /* Azul medianoche */
+            --texto-secundario: #33475b;
+            --detalle: #1e3a5f;                /* Azul corporativo */
+            --acento: #ca8a04;                  /* Ámbar/dorado para números y acentos */
+            --borde-suave: #e2e8f0;
+            --sombra: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+        }
+
+        body {
+            background-color: var(--fondo);
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.5;
+            color: var(--texto-principal);
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Hoja principal estilo carta A4 */
+        .resume {
+            max-width: 1100px;
+            width: 100%;
+            background-color: var(--superficie);
+            box-shadow: var(--sombra);
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 2.5rem 2.8rem;
+            border: 1px solid var(--borde-suave);
+        }
+
+        /* Tipografía limpia */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--detalle);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--texto-secundario);
+            border-bottom: 3px solid var(--acento);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--detalle);
+        }
+
+        .subtitulo-cargo {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--texto-secundario);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Layout de dos columnas */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2.2fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        /* ---------- COLUMNA IZQUIERDA (DATOS + SKILLS) ---------- */
+        .sidebar {
+            border-right: 1px solid var(--borde-suave);
+            padding-right: 1.8rem;
+        }
+
+        .seccion {
+            margin-bottom: 2rem;
+        }
+
+        .seccion h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border-bottom-width: 2px;
+        }
+
+        .contacto-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.7rem;
+            color: var(--texto-secundario);
+            font-size: 0.95rem;
+        }
+
+        .icono {
+            font-size: 1.2rem;
+            min-width: 1.5rem;
+        }
+
+        .linkedin {
+            color: var(--detalle);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            background-color: #eef2f6;
+            color: var(--detalle);
+            padding: 0.25rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.2rem 0.15rem;
+            border: 1px solid transparent;
+            transition: 0.1s;
+        }
+
+        .skill-badge:hover {
+            border-color: var(--acento);
+        }
+
+        .skill-cat {
+            margin-bottom: 1rem;
+        }
+
+        .skill-cat p {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            color: var(--texto-principal);
+        }
+
+        .idioma {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .formacion-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .formacion-item .titulo {
+            font-weight: 600;
+        }
+
+        .formacion-item .lugar {
+            font-size: 0.9rem;
+            color: var(--texto-secundario);
+        }
+
+        /* ---------- COLUMNA PRINCIPAL (EXPERIENCIA) ---------- */
+        .main h2 {
+            margin-top: 0.5rem;
+        }
+
+        .experiencia-item {
+            margin-bottom: 2rem;
+        }
+
+        .experiencia-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.3rem;
+        }
+
+        .experiencia-header h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .fecha {
+            font-size: 0.9rem;
+        }
+
+        .experiencia-header .fecha {
+            /* font-size: 0.8rem; */
+            background-color: #eef2f6;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            color: var(--detalle);
+            font-weight: 500;
+        }
+
+        .empresa {
+            font-weight: 500;
+            color: var(--acento);
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .logros {
+            list-style: none;
+        }
+
+        .logros li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            color: var(--texto-secundario);
+        }
+
+        .logros li::before {
+            content: "▹";
+            color: var(--acento);
+            font-weight: bold;
+        }
+
+        .impact-number {
+            font-weight: 700;
+            color: var(--detalle);
+            background: linear-gradient(145deg, #f1f5f9, #ffffff);
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+        }
+
+        /* About me resumido (arriba) */
+        .about-mini {
+            background-color: #f1f5f9;
+            padding: 1.2rem 1.5rem;
+            border-radius: 16px;
+            margin: 1.5rem 0 0.5rem 0;
+            border-left: 6px solid var(--acento);
+            font-size: 0.98rem;
+            color: var(--texto-secundario);
+        }
+
+        .about-mini strong {
+            color: var(--detalle);
+            font-weight: 600;
+        }
+
+        /* Para impresión / PDF */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .resume {
+                box-shadow: none;
+                border: none;
+                padding: 1.8rem 2rem;
+                border-radius: 0;
+            }
+            .skill-badge {
+                background-color: #eef2f6 !important;
+                border: 1px solid #ccc;
+            }
+            .about-mini {
+                background-color: #f1f5f9 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Responsive (por si lo ven en móvil) */
+        @media (max-width: 750px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .sidebar {
+                border-right: 0;
+                padding-right: 0;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+        .header-contacto-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
 <body>
-    <app-root></app-root>
+    <div class="resume">
+        <!-- CABECERA NOMBRE + TÍTULO IMPACTO -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div>
+                <h1>Iván Gómez Calvo</h1>
+                <div class="subtitulo-cargo">Desarrollador de Software | Web FullStack | Android</div>
+            </div>
+            <img src="https://avatars.githubusercontent.com/u/127850919?v=4" alt="Foto de perfil" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--borde-suave);">
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script src="runtime.bf214e5c1e074ec1.js" type="module"></script><script src="polyfills.2ed2eab1cc717426.js" type="module"></script><script src="main.ac4012995cbd62fc.js" type="module"></script></body>
+        <!-- RESUMEN EJECUTIVO (propuesta de valor) -->
+        <div class="about-mini">
+            <strong>Desarrollador de Software con experiencia en banca y energía.</strong> He migrado y gestionado <span class="impact-number">+20.000 registros financieros</span> en entornos de producción con alta criticidad (bancos con cuentas de <span class="impact-number">+1M€</span>). Especializado en aplicaciones web y móviles robustas. 
+            <br><br>
+            Busco una posición estable para aportar soluciones escalables desde el día uno.
+        </div>
 
+        <!-- ESTRUCTURA DOS COLUMNAS -->
+        <div class="grid">
+            <!-- COLUMNA IZQUIERDA: CONTACTO + SKILLS + IDIOMAS + FORMACIÓN -->
+            <div class="sidebar">
+                <!-- CONTACTO -->
+                <div class="seccion">
+                    <h2>CONTACTO</h2>
+                    <div class="contacto-item">
+                        <span class="icono">📧</span> <span>ivan_dev@outlook.es</span>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="icono">📱</span> <span>+34 605 81 55 94</span>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="icono">📍</span> <span>Guadalajara · Madrid</span>
+                    </div>
+                    <div class="contacto-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 256 256">
+                            <rect width="256" height="256" rx="28" fill="#0A66C2"/>
+                            <rect x="44" y="96" width="36" height="116" fill="#FFFFFF"/>
+                            <circle cx="62" cy="60" r="18" fill="#FFFFFF"/>
+                            <rect x="124" y="96" width="36" height="116" fill="#FFFFFF"/>
+                            <path d="M160 96 h32 c28 0 44 18 44 44 v72 h-36 v-64 c0-14-6-24-22-24 h-18 z" fill="#FFFFFF"/>
+                        </svg>
+                        <a href="https://www.linkedin.com/in/ivandev1999/" target="_blank" class="linkedin">linkedin.com/in/ivandev1999</a>
+                    </div>
+                    <div class="contacto-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--detalle);"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.09a13.65 13.65 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        <a href="https://github.com/deduc" target="_blank" class="linkedin">github.com/deduc</a>
+                    </div>
+                </div>
+
+                <!-- STACK TECNOLÓGICO (Keywords para ATS) -->
+                <div class="seccion">
+                    <h2>STACK TECNOLÓGICO</h2>
+                    <div class="skill-cat">
+                        <p>Frontend</p>
+                        <span class="skill-badge">Vue</span>
+                        <span class="skill-badge">Angular</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">TypeScript</span>
+                        <span class="skill-badge">HTML/CSS/JS</span>
+                    </div>
+                    <div class="skill-cat">
+                        <p>Backend</p>
+                        <span class="skill-badge">.NET (C#)</span>
+                        <span class="skill-badge">Django</span>
+                        <span class="skill-badge">PHP</span>
+                        <span class="skill-badge">Node.js</span>
+                    </div>
+                    <div class="skill-cat">
+                        <p>Móvil</p>
+                        <span class="skill-badge">Kotlin</span>
+                        <span class="skill-badge">React Native</span>
+                    </div>
+                    <div class="skill-cat">
+                        <p>Bases de Datos</p>
+                        <span class="skill-badge">PostgreSQL</span>
+                        <span class="skill-badge">SQL Server</span>
+                        <span class="skill-badge">MySQL</span>
+                    </div>
+                    <div class="skill-cat">
+                        <p>Otros</p>
+                        <span class="skill-badge">Git/GitHub</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">Kubernetes</span>
+                    </div>
+                </div>
+
+                <!-- IDIOMAS -->
+                <div class="seccion">
+                    <h2>IDIOMAS</h2>
+                    <div class="idioma"><span>Español</span><span>Nativo</span></div>
+                    <div class="idioma"><span>Inglés</span><span>B1 (en curso)</span></div>
+                </div>
+
+                <!-- FORMACIÓN -->
+                <div class="seccion">
+                    <h2>FORMACIÓN</h2>
+                    <div class="formacion-item">
+                        <div class="titulo">G.S. Desarrollo Aplicaciones Web (DAW)</div>
+                        <div class="lugar">IES Arcipreste de Hita · 2021-2023</div>
+                    </div>
+                    <div class="formacion-item">
+                        <div class="titulo">G.S. Administración Sistemas (ASIR)</div>
+                        <div class="lugar">IES Arcipreste de Hita · 2019-2021</div>
+                    </div>
+                    <div class="formacion-item">
+                        <div class="titulo">Curso Especialización Big Data & IA</div>
+                        <div class="lugar">IES Arcipreste de Hita · 2023-2024</div>
+                    </div>
+                    <div class="formacion-item">
+                        <div class="titulo">Curso Java</div>
+                        <div class="lugar">Universidad Nebrija · 2024-2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA PRINCIPAL: EXPERIENCIA PROFESIONAL (reescrita con impacto) -->
+            <div class="main">
+                <h2>EXPERIENCIA PROFESIONAL</h2>
+
+                <!-- Edge Expertise -->
+                <div class="experiencia-item">
+                    <span class="fecha">jul 2025 – ene 2026 · 7 meses</span>
+                    <div style="margin: 0.2rem 0 0.5rem 0;">
+                        <span class="subtitulo-cargo" style="font-size: 1.1rem; font-weight: 500;">Ingeniero de Software</span> · <span class="empresa">Edge Expertise</span>
+                    </div>
+                    <ul class="logros">
+                        <li><strong>Arquitecté y ejecuté la migración de <span class="impact-number">+20.000 registros</span> de transferencias bancarias</strong> desde SharePoint a PostgreSQL para el Grupo SEG, reestructurando tablas y modelos para dar servicio a clientes con cuentas de hasta <span class="impact-number">+1M€</span>.</li>
+                        <li><strong>Desarrollé una pasarela de pagos y consultas bancarias</strong> (API Afterbanks Arcopay + PSD2) permitiendo a clientes corporativos filtrar operaciones por IBAN, fecha y saldo en tiempo real.</li>
+                        <li><strong>Implementé un ERP Full Stack (Web + Móvil)</strong> para la gestión integral de Bodegas Sandovall, dando servicio a 10 usuarios internos.</li>
+                        <li><strong>Creé un generador de formularios web reactivos</strong> con agentes inteligentes, con exportación a Excel, Word y PDF.</li>
+                    </ul>
+                </div>
+
+                <!-- Stratesys (Repsol) -->
+                <div class="experiencia-item">
+                    <span class="fecha">ago 2024 – feb 2025 · 7 meses</span>
+                    <div style="margin: 0.2rem 0 0.5rem 0;">
+                        <span class="subtitulo-cargo" style="font-size: 1.1rem; font-weight: 500;">Desarrollador Full Stack</span> · <span class="empresa">Stratesys</span>
+                    </div>
+                    <ul class="logros">
+                        <li><strong>Optimización de consultas SQL y operaciones CRUD</strong> en bases de datos relacionales con más de <span class="impact-number">100.000 registros</span>, reduciendo la carga en servidores y mejorando el rendimiento general.</li>
+                        <li><strong>Gestioné despliegues en producción mediante pipelines CI/CD</strong>, asegurando cero downtime en entornos de alta criticidad para proyectos de Repsol.</li>
+                        <li><strong>Ejecuté migraciones de modelos de datos</strong> y resolución de incidencias en aplicaciones estratégicas.</li>
+                    </ul>
+                </div>
+
+                <!-- ICP -->
+                <div class="experiencia-item">
+                    <span class="fecha">abr 2023 – jun 2023 · 3 meses</span>
+                    <div style="margin: 0.2rem 0 0.5rem 0;">
+                        <span class="subtitulo-cargo" style="font-size: 1.1rem; font-weight: 500;">Desarrollador Full Stack</span> · <span class="empresa">ICP</span>
+                    </div>
+                    <ul class="logros">
+                        <li><strong>Desarrollé una aplicación web empresarial</strong> (Angular, .NET, SQL Server) en un entorno de consultoría real, aplicando resolución de incidencias y desarrollo de evolutivos como proyecto de fin de grado.</li>
+                    </ul>
+                </div>
+
+                <!-- Profesor particular -->
+                <div class="experiencia-item">
+                    <span class="fecha">sept 2023 – actualidad · +2 años</span>
+                    <div style="margin: 0.2rem 0 0.5rem 0;">
+                        <span class="subtitulo-cargo" style="font-size: 1.1rem; font-weight: 500;">Profesor particular de programación</span> · <span class="empresa">Por cuenta propia</span>
+                    </div>
+                    <ul class="logros">
+                        <li><strong>Mentorizo a estudiantes</strong> en Java, Python, HTML/CSS/JS/TS, fomentando buenas prácticas y pensamiento lógico.</li>
+                    </ul>
+                </div>
+
+                <!-- Mindset (opcional, puedes eliminarlo si quieres más espacio) -->
+                <div style="margin-top: 0.5rem; font-size: 0.9rem; background: #f8fafc; padding: 0.8rem; border-radius: 12px; border: 1px dashed var(--borde-suave);">
+                    ⚡ <strong>Mindset:</strong> Perseverancia, comunicación clara y enfoque en programas que no fallen. Acostumbrado a entornos con presión y plazos.
+                </div>
+            </div>
+        </div>
+
+        <!-- PIE con frase de impacto sutil -->
+        <div style="margin-top: 1.8rem; text-align: right; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid var(--borde-suave); padding-top: 0.5rem;">
+            · Perfil contrastado con metodología STAR · disponible para incorporación inmediata ·
+        </div>
+    </div>
+</body>
 </html>
