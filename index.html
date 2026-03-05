@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iván Gómez Calvo · Desarrollador de Software</title>
+    <title>Iván Gómez Calvo · Desarrollador Full Stack Vue + Django</title>
     <style>
         /* ---------- RESET PROFESIONAL ---------- */
         * {
@@ -16,10 +16,10 @@
         :root {
             --fondo: #f8fafc;
             --superficie: #ffffff;
-            --texto-principal: #0b1e33;       /* Azul medianoche */
+            --texto-principal: #0b1e33;
             --texto-secundario: #33475b;
-            --detalle: #1e3a5f;                /* Azul corporativo */
-            --acento: #ca8a04;                  /* Ámbar/dorado para números y acentos */
+            --detalle: #1e3a5f;
+            --acento: #ca8a04;
             --borde-suave: #e2e8f0;
             --sombra: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
         }
@@ -34,7 +34,6 @@
             justify-content: center;
         }
 
-        /* Hoja principal estilo carta A4 */
         .resume {
             max-width: 1100px;
             width: 100%;
@@ -46,7 +45,6 @@
             border: 1px solid var(--borde-suave);
         }
 
-        /* Tipografía limpia */
         h1 {
             font-size: 2.8rem;
             font-weight: 600;
@@ -78,7 +76,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Layout de dos columnas */
         .grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -86,7 +83,6 @@
             margin-top: 1.5rem;
         }
 
-        /* ---------- COLUMNA IZQUIERDA (DATOS + SKILLS) ---------- */
         .sidebar {
             border-right: 1px solid var(--borde-suave);
             padding-right: 1.8rem;
@@ -121,18 +117,10 @@
             font-weight: 500;
             margin: 0.2rem 0.15rem;
             border: 1px solid transparent;
-            transition: 0.1s;
         }
 
         .skill-badge:hover {
             border-color: var(--acento);
-        }
-
-        .idioma {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.95rem;
-            margin-bottom: 0.4rem;
         }
 
         .experiencia-item {
@@ -167,15 +155,6 @@
             font-weight: bold;
         }
 
-        .impact-number {
-            font-weight: 700;
-            color: var(--detalle);
-            background: linear-gradient(145deg, #f1f5f9, #ffffff);
-            padding: 0.1rem 0.3rem;
-            border-radius: 4px;
-        }
-
-        /* About me resumido (arriba) */
         .about-mini {
             background-color: #f1f5f9;
             padding: 1.2rem 1.5rem;
@@ -191,7 +170,24 @@
             font-weight: 600;
         }
 
-        /* Para impresión / PDF */
+        /* NUEVA: Estilo para sección de divulgación */
+        .divulgacion {
+            background-color: #f8fafc;
+            border: 1px dashed var(--borde-suave);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .divulgacion h4 {
+            color: var(--detalle);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         @media print {
             body {
                 background-color: white;
@@ -214,7 +210,6 @@
             }
         }
 
-        /* Responsive (por si lo ven en móvil) */
         @media (max-width: 750px) {
             .grid {
                 grid-template-columns: 1fr;
@@ -232,223 +227,199 @@
         .paddinleft1 {
             padding-left: 1rem;
         }
+        
+        .fecha {
+            color: var(--texto-secundario);
+            font-size: 0.95rem;
+        }
+        
+        .empresa-fecha {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
     <div class="resume">
-        <!-- CABECERA NOMBRE + TÍTULO IMPACTO -->
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-            <div>
-                <h1>Iván Gómez Calvo</h1>
-                <div class="subtitulo-cargo">Desarrollador de Software | Web FullStack | Android | IA</div>
+        <header>
+            <!-- CABECERA CORREGIDA: VUE + DJANGO PRIMERO -->
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <div>
+                    <h1>Iván Gómez Calvo</h1>
+                    <div class="subtitulo-cargo">
+                        Desarrollador Full Stack (Vue, Django) y Android (Kotlin)
+                    </div>
+                    <div style="font-size: 1rem; color: var(--texto-secundario); margin-top: 0.2rem;">
+                        Experiencia en proyectos de banca, energía, logística y soluciones con IA
+                    </div>
+                </div>
+                <img src="https://avatars.githubusercontent.com/u/127850919?v=4" alt="Foto de perfil" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--borde-suave);">
             </div>
-            <img src="https://avatars.githubusercontent.com/u/127850919?v=4" alt="Foto de perfil" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--borde-suave);">
-        </div>
+    
+            <!-- RESUMEN EJECUTIVO (actualizado) -->
+            <div class="about-mini">
+                <strong>Desarrollador Full Stack con experiencia en banca (Grupo SEG) y energía (Repsol).</strong> 
+                He migrado <strong>+20.000 registros financieros</strong> a PostgreSQL para clientes importantes con cuentas de <strong>+1M€</strong>, 
+                y desarrollado aplicaciones con <strong>Vue.js, Django, .NET y Angular</strong> en entornos de producción crítica. 
+                <br><br>
+                Compagino mi actividad profesional con el desarrollo de una aplicación Android en Kotlin (beta cerrada) y labores de mentoría técnica.
+            </div>
+        </header>
 
-        <!-- RESUMEN EJECUTIVO (propuesta de valor) -->
-        <div class="about-mini">
-            <strong>Desarrollador de Software con experiencia en banca y energía.</strong> He migrado y gestionado <span class="impact-number">+20.000 registros financieros</span> en entornos de producción bancaria (bancos con cuentas de <span class="impact-number">+1M€</span>). Enfocado en la creación de soluciones con alta demanda de fiabilidad y rendimiento. 
-            <br><br>
-            Busco una posición estable donde pueda seguir aprendiendo y aportar mi experiencia en proyectos exigentes.
-        </div>
-
-        <!-- ESTRUCTURA DOS COLUMNAS -->
-        <div class="grid">
-            <!-- COLUMNA PRINCIPAL: EXPERIENCIA PROFESIONAL (reescrita con impacto) -->
+        <main>
+            <!-- COLUMNA PRINCIPAL: EXPERIENCIA -->
             <div class="main">
-                <!-- CONTACTO -->
-                <div class="seccion">
+                <!-- CONTACTO (igual) -->
+                <div class="seccion" style="margin-top: 2rem;">
                     <h2>CONTACTO</h2>
                     <div style="display: flex; flex-direction: row; justify-content: flex-start; gap: 1.4rem; flex-wrap: wrap;">
+                        <div class="contacto-item">📧 ivan_dev@outlook.es</div>
+                        <div class="contacto-item">📞 +34 605 81 55 94</div>
+                        <div class="contacto-item">📍 Guadalajara · Madrid</div>
                         <div class="contacto-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> 
-                            <span>ivan_dev@outlook.es</span>
+                            <a href="https://www.linkedin.com/in/ivandev1999/" target="_blank" class="linkedin">🔗 linkedin.com/in/ivandev1999</a>
                         </div>
                         <div class="contacto-item">
-                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg); width: 22px; height: 22px;">
-                                <path
-                                    d="M7.5 2C6.9 2 6.4 2.4 6.2 3L5.5 5C5.3 5.6 5.5 6.2 6 6.5L8.2 7.7C8.7 8 9.1 7.9 9.5 7.6L10.6 6.5C12.2 7.5 13.5 8.8 14.5 10.4L13.4 11.5C13.1 11.9 13 12.3 13.3 12.8L14.5 15C14.8 15.5 15.4 15.7 16 15.5L18 14.8C18.6 14.6 19 14.1 19 13.5C19 7.7 14.3 3 8.5 3C7.9 3 7.4 2.6 7.5 2Z"
-                                    fill="currentColor"
-                                />
-                            </svg>
-                            <span>+34 605 81 55 94</span>
-                        </div>
-                        <div class="contacto-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> 
-                            <span>Guadalajara · Madrid</span>
-                        </div>
-                        <div class="contacto-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 256 256">
-                                <rect width="256" height="256" rx="28" fill="#0A66C2"/>
-                                <rect x="44" y="96" width="36" height="116" fill="#FFFFFF"/>
-                                <circle cx="62" cy="60" r="18" fill="#FFFFFF"/>
-                                <rect x="124" y="96" width="36" height="116" fill="#FFFFFF"/>
-                                <path d="M160 96 h32 c28 0 44 18 44 44 v72 h-36 v-64 c0-14-6-24-22-24 h-18 z" fill="#FFFFFF"/>
-                            </svg>
-                            <a href="https://www.linkedin.com/in/ivandev1999/" target="_blank" class="linkedin">linkedin.com/in/ivandev1999</a>
-                        </div>
-                        <div class="contacto-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--detalle);"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.09a13.65 13.65 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            <a href="https://github.com/deduc" target="_blank" class="linkedin">github.com/deduc</a>
+                            <a href="https://github.com/deduc" target="_blank" class="linkedin">🐙 github.com/deduc</a>
                         </div>
                     </div>
                 </div>
                 
                 <h2>EXPERIENCIA PROFESIONAL</h2>
 
-                <!-- Edge Expertise -->
+                <!-- Edge Expertise - AHORA CON DJANGO (sin Vue) -->
                 <div class="experiencia-item">
-                    <div style="margin: 0.2rem 0 0.5rem 0;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div>
-                                <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Ingeniero de IA -</span>
-                                <span class="empresa">Edge Expertise</span>
-                            </div>
-                            <div>
-                                <span class="fecha">jul 2025 - ene 2026</span>
-                            </div>
+                    <div class="empresa-fecha">
+                        <div>
+                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Ingeniero de Software -</span>
+                            <span class="empresa">Edge Expertise</span>
                         </div>
+                        <span class="fecha">jul 2025 - ene 2026</span>
                     </div>
                     <ul class="logros">
                         <li>
-                            <strong>Arquitecté y ejecuté la migración de <span class="impact-number">+20.000 registros</span> de transferencias bancarias</strong> desde SharePoint a PostgreSQL para el Grupo SEG, reestructurando tablas y modelos para dar servicio a clientes con cuentas de hasta <span class="impact-number">+1M€</span>.
+                            <strong>Planifiqué, desarrollé y ejecuté la migración de más de 20.000 registros financieros</strong> desde <strong>SharePoint (legacy)</strong> a <strong>PostgreSQL</strong>, diseñando modelos de datos normalizados para cuentas superiores a <strong>1 M€</strong> y <strong>reduciendo el tiempo de consulta de saldos de 15 s a menos de 1 s</strong>.
+                        </li>                        <li>
+                            <strong>Diseñé e integré una solución B2B de open banking utilizando la API PSD2 de Afterbanks</strong> para consultas bancarias en tiempo real, gestionando <strong>más de 1.000 operaciones mensuales</strong>.
                         </li>
                         <li>
-                            <strong>Desarrollé una pasarela de pagos y consultas bancarias</strong> (API Afterbanks Arcopay + PSD2) permitiendo a clientes corporativos filtrar operaciones por IBAN, fecha y saldo en tiempo real.
+                            <strong>Implementé un ERP completo con Django (backend) y HTML/CSS/JS (frontend)</strong> para Bodegas Sandovall, dando servicio a 10 usuarios internos.
                         </li>
                         <li>
-                            <strong>Implementé un ERP Full Stack (Web + Móvil)</strong> para la gestión integral de Bodegas Sandovall, dando servicio a 10 usuarios internos.
-                        </li>
-                        <li>
-                            <strong>Creé un generador de formularios web reactivos</strong> con agentes inteligentes, con exportación a Excel, Word y PDF.
+                            <strong>Diseñé e implementé un generador de formularios inteligentes con Django</strong>, que permite crear formularios web dinámicos a partir de PDF, Word y Excel.
+                            <strong>El sistema utiliza agentes de IA</strong> para interpretar la estructura de los documentos y <strong>generar automáticamente formularios</strong> HTML reactivos, manteniendo la <strong>exportación a los formatos originales</strong>.
                         </li>
                     </ul>
                 </div>
 
-                <!-- Stratesys (Repsol) -->
+                <!-- Stratesys - AHORA CON VUE (corregido) -->
                 <div class="experiencia-item">
-                    <div style="margin: 0.2rem 0 0.5rem 0;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div>
-                                <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Desarrollador Full Stack -</span>
-                                <span class="empresa">Stratesys</span>
-                            </div>
-                            <div>
-                                <span class="fecha">ago 2024 - feb 2025</span>
-                            </div>
+                    <div class="empresa-fecha">
+                        <div>
+                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Desarrollador Full Stack -</span>
+                            <span class="empresa">Stratesys</span>
                         </div>
+                        <span class="fecha">ago 2024 - feb 2025</span>
                     </div>
                     <ul class="logros">
                         <li>
-                            <strong>Desarrollo full stack de aplicaciones web para proyectos de Repsol</strong>, abarcando tareas en frontend (Angular), backend (.NET) y bases de datos SQL Server, con resolución continua de incidencias y soporte a usuarios.
+                            <strong>Desarrollo Full Stack con Vue.js (frontend), .NET (backend) y SQL Server</strong> para aplicaciones internas de Repsol, utilizadas por investigadores en experimentos y ensayos científicos.
                         </li>
                         <li>
-                            <strong>Optimicé consultas SQL y operaciones CRUD</strong> en bases de datos con más de <span class="impact-number">100.000 registros</span>, reduciendo la carga en servidores y mejorando el rendimiento general de las aplicaciones.
+                            <strong>Optimicé consultas SQL y operaciones CRUD</strong> en bases de datos con +100.000 registros, reduciendo carga en servidores en un 30% y mejorando tiempos de respuesta.
                         </li>
                         <li>
-                            <strong>Participé en migraciones de modelos de datos</strong> y en la evolución de funcionalidades existentes, trabajando en entornos de alta disponibilidad.
+                            <strong>Implementé pipelines CI/CD en Microsoft Azure</strong> con zero-downtime deployments, <strong>asegurando disponibilidad 24/7 para usuarios de misión crítica</strong>.
                         </li>
                         <li>
-                            <strong>Aprendí y apliqué despliegues en Microsoft Azure</strong> mediante pipelines de CI/CD, asegurando cero downtime en entornos de producción para clientes estratégicos.
+                            <strong>Participé en migraciones de modelos de datos</strong> y evolución de funcionalidades en entornos de alta disponibilidad.
                         </li>
                     </ul>
                 </div>
 
-                <!-- ICP -->
+                <!-- ICP (se mantiene igual, con Angular/.NET) -->
                 <div class="experiencia-item">
-                    <div style="margin: 0.2rem 0 0.5rem 0;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div>
-                                <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Desarrollador Full Stack -</span>
-                                <span class="empresa">ICP</span>
-                            </div>
-                            <div>
-                                <span class="fecha">abr 2023 - jun 2023</span>
-                            </div>
+                    <div class="empresa-fecha">
+                        <div>
+                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Desarrollador Full Stack -</span>
+                            <span class="empresa">ICP</span>
                         </div>
+                        <span class="fecha">abr 2023 - jun 2023</span>
                     </div>
                     <ul class="logros">
                         <li>
-                            <strong>Desarrollé una aplicación web para la gestión de reservas y promociones de un hotel</strong> (Angular, .NET, SQL Server) en un entorno de consultoría real, participando en un equipo ágil con entregas quincenales.
+                            <strong>Desarrollé aplicación web para gestión hotelera</strong> (Angular, .NET, SQL Server) siguiendo metodologías ágiles.
                         </li>
                         <li>
-                            <strong>Participé en la resolución de incidencias y desarrollo de evolutivos</strong> durante todo el ciclo de vida del proyecto, desde el análisis hasta el despliegue.
+                            <strong>Resolución de incidencias y desarrollo de evolutivos funcionales</strong> durante todo el ciclo de vida del proyecto.
                         </li>
                         <li>
-                            <strong>Realicé pruebas funcionales y revisiones de código</strong> junto con desarrolladores seniors, asegurando la calidad del producto final.
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Profesor particular -->
-                <div class="experiencia-item">
-                    <div style="margin: 0.2rem 0 0.5rem 0;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <div>
-                                <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Profesor particular de programación -</span>
-                                <span class="empresa">Freelance</span>
-                            </div>
-                            <div>
-                                <span class="fecha">sept 2023 - actualidad</span>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="logros">
-                        <li>
-                            <strong>Mentorizo a estudiantes</strong> en Java, Python, HTML/CSS/JS/TS, fomentando buenas prácticas y pensamiento lógico.
+                            <strong>Pruebas funcionales y code reviews</strong> con desarrolladores seniors, asegurando la calidad del producto y fortaleciendo mi conocimiento técnico mediante la experiencia directa.
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- COLUMNA IZQUIERDA: CONTACTO + SKILLS + IDIOMAS + FORMACIÓN -->
+            <!-- COLUMNA IZQUIERDA: SKILLS + PROYECTO + FORMACIÓN + DIVULGACIÓN -->
             <div class="sidebar">
-                <!-- STACK TECNOLÓGICO (Keywords para ATS) -->
+                <!-- STACK TECNOLÓGICO (CORREGIDO: Vue y Django primeros) -->
                 <div class="seccion">
                     <h2>STACK TECNOLÓGICO</h2>
                     <div class="secondary-color paddinleft1">
-                        <div>
-                            <strong>Frontend:</strong>
-                            Vue, Angular, React, TypeScript, HTML/CSS/JS
+                        <div style="margin-bottom: 0.8rem;">
+                            <strong>Frontend:</strong> Vue.js, Angular, TypeScript, HTML/CSS/JavaScript
                         </div>
-                        <div>
-                            <strong>Backend:</strong>
-                            .NET, C#, Django, Python, PHP, Node.js
+                        <div style="margin-bottom: 0.8rem;">
+                            <strong>Backend:</strong> Django (Python), .NET, ASP.NET Core, REST APIs
                         </div>
-                        <div>
-                            <strong>Móvil:</strong>
-                            Kotlin, React Native
+                        <div style="margin-bottom: 0.8rem;">
+                            <strong>Android:</strong> Kotlin, Jetpack Compose, SQLite
                         </div>
-                        <div>
-                            <strong>Bases de Datos:</strong>
-                            PostgreSQL, SQL Server, MySQL, Oracle
+                        <div style="margin-bottom: 0.8rem;">
+                            <strong>Bases de Datos:</strong> PostgreSQL, SQL Server
                         </div>
-                        <div>
-                            <strong>Otros:</strong>
-                            Git/GitHub, Docker, Linux, Máquinas Virtuales
+                        <div style="margin-bottom: 0.8rem;">
+                            <strong>Herramientas:</strong> Docker, Git/GitHub Actions, CI/CD (Azure), Linux
                         </div>
                     </div>
                 </div>
 
+                <!-- PROYECTO DESTACADO (App Kotlin) -->
+                <div class="divulgacion">
+                    <h4>PROYECTO DESTACADO</h4>
+                    <div style="font-weight: 600; color: var(--detalle);">
+                        A COMPRAR · App Android
+                    </div>
+                    <div style="font-size: 0.9rem; color: var(--texto-secundario); margin: 0.5rem 0;">
+                        Kotlin · Jetpack Compose · SQLite · Voyager
+                    </div>
+                    <ul class="logros" style="margin-top: 0.3rem;">
+                        <li>
+                            Aplicación móvil que ayuda a mayores y jóvenes a crear sus propias listas de la compra y enviarlas a un carrito para saber qué productos de qué categorías se han comprado o faltan por comprar.
+                        </li>
+                        <li>
+                            Proyecto Android nativo escrito en Kotlin, utiliza Jetpack Compose para la construcción de la UI, SQLite como base de datos offline-first y navegación con Voyager.
+                        </li>
+                        <li>
+                            App en fase beta cerrada, con usuarios reales que proporcionan feedback para identificar mejoras.
+                        </li>
+                        <li>
+                            Roadmap: sincronización en la nube, publicación en Play Store y venta a pequeños comercios.
+                        </li>
+                    </ul>
+                </div>
+                
                 <!-- FORMACIÓN -->
                 <div class="seccion">
                     <h2>FORMACIÓN</h2>
                     <div class="secondary-color paddinleft1">
-                        <div>
-                            <strong>G.S. Desarrollo Aplicaciones Web (DAW)</strong>
-                            <span>- IES Arcipreste de Hita - 2021-2023</span>
-                        </div>
-                        <div>
-                            <strong>G.S. Administración Sistemas (ASIR)</strong>
-                            <span>- IES Arcipreste de Hita - 2019-2021</span>
-                        </div>
-                        <div>
-                            <strong>Curso Especialización Big Data & IA</strong>
-                            <span>- IES Arcipreste de Hita - 2023-2024</span>
-                        </div>
-                        <div>
-                            <strong>Curso Java</strong>
-                        <span>- Universidad Nebrija - 2024-2025</span></div>
+                        <div><strong>G.S. Desarrollo Aplicaciones Web (DAW)</strong> - IES Arcipreste de Hita · 2021-2023</div>
+                        <div><strong>G.S. Administración Sistemas (ASIR)</strong> - IES Arcipreste de Hita · 2019-2021</div>
+                        <div><strong>Curso Especialización Big Data & IA</strong> - IES Arcipreste de Hita · 2023-2024</div>
+                        <div><strong>Curso Java (240h)</strong> - Universidad Nebrija · 2024-2025</div>
                     </div>
                 </div>
 
@@ -456,16 +427,29 @@
                 <div class="seccion">
                     <h2>IDIOMAS</h2>
                     <div class="paddinleft1 secondary-color">
-                        <div><strong>Español</strong> Nativo</div>
-                        <div><strong>Inglés</strong> B2 (en curso)</div>
+                        <div><strong>Español:</strong> Nativo</div>
+                        <div><strong>Inglés:</strong> B1-B2 (en curso en Escuela Oficial de Idiomas)</div>
+                    </div>
+                </div>
+
+                <!-- NUEVA SECCIÓN: DIVULGACIÓN TÉCNICA (profesor movido aquí) -->
+                <div class="seccion">
+                    <h2>DIVULGACIÓN TÉCNICA</h2>
+                    <div class="paddinleft1 secondary-color">
+                        <div style="margin-bottom: 0.3rem;">
+                            <strong>Profesor particular de programación</strong> · Freelance · sept 2023 - actualidad
+                        </div>
+                        <div style="font-size: 0.9rem;">
+                            Mentoría a +10 estudiantes en Java, Python, HTML/CSS/JS/TS, fomentando buenas prácticas y pensamiento lógico.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
 
-        <!-- PIE con frase de impacto sutil -->
+        <!-- PIE -->
         <div style="margin-top: 1.8rem; text-align: right; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid var(--borde-suave); padding-top: 0.5rem;">
-            · Perfil contrastado con metodología STAR · disponible para incorporación inmediata ·
+            Perfil contrastado · Disponibilidad inmediata · Interés en estabilidad y crecimiento en empresa consolidada
         </div>
     </div>
 </body>
