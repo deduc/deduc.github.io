@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,7 @@
             --detalle: #1e3a5f;
             --acento: #ca8a04;
             --borde-suave: #e2e8f0;
-            --sombra: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+            --sombra: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
         }
 
         body {
@@ -193,16 +194,19 @@
                 background-color: white;
                 padding: 0;
             }
+
             .resume {
                 box-shadow: none;
                 border: none;
                 padding: 1.8rem 2rem;
                 border-radius: 0;
             }
+
             .skill-badge {
                 background-color: #eef2f6 !important;
                 border: 1px solid #ccc;
             }
+
             .about-mini {
                 background-color: #f1f5f9 !important;
                 -webkit-print-color-adjust: exact;
@@ -215,10 +219,12 @@
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+
             .sidebar {
                 border-right: 0;
                 padding-right: 0;
             }
+
             h1 {
                 font-size: 2.2rem;
             }
@@ -227,12 +233,12 @@
         .paddinleft1 {
             padding-left: 1rem;
         }
-        
+
         .fecha {
             color: var(--texto-secundario);
             font-size: 0.95rem;
         }
-        
+
         .empresa-fecha {
             display: flex;
             justify-content: space-between;
@@ -240,12 +246,24 @@
             flex-wrap: wrap;
             margin-bottom: 0.5rem;
         }
+
+        .descripcion-empresa {
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: var(--texto-secundario);
+            background-color: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--acento);
+        }
+
     </style>
 </head>
+
 <body>
     <div class="resume">
         <header>
-            <!-- CABECERA CORREGIDA: VUE + DJANGO PRIMERO -->
+            <!-- CABECERA -->
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                 <div>
                     <h1>Iván Gómez Calvo</h1>
@@ -253,111 +271,160 @@
                         Desarrollador Full Stack (Vue, Django) y Android (Kotlin)
                     </div>
                     <div style="font-size: 1rem; color: var(--texto-secundario); margin-top: 0.2rem;">
-                        Experiencia en proyectos de banca, energía, logística y soluciones con IA
+                        Experiencia en banca, energía, logística y soluciones con IA
                     </div>
                 </div>
-                <img src="https://avatars.githubusercontent.com/u/127850919?v=4" alt="Foto de perfil" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--borde-suave);">
+                <img src="https://avatars.githubusercontent.com/u/127850919?v=4" alt="Foto de perfil"
+                    style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--borde-suave);">
             </div>
-    
-            <!-- RESUMEN EJECUTIVO (actualizado) -->
+
+            <!-- RESUMEN EJECUTIVO -->
             <div class="about-mini">
-                <strong>Desarrollador Full Stack con experiencia en banca (Grupo SEG) y energía (Repsol).</strong> 
-                He migrado <strong>+20.000 registros financieros</strong> a PostgreSQL para clientes importantes con cuentas de <strong>+1M€</strong>, 
-                y desarrollado aplicaciones con <strong>Vue.js, Django, .NET y Angular</strong> en entornos de producción crítica. 
+                <strong>Desarrollador Full Stack con experiencia en banca (Grupo SEG) y energía (Repsol).</strong>
+                He migrado <strong>+20.000 registros financieros</strong> a PostgreSQL para clientes con cuentas de
+                <strong>+1M€</strong>, y desarrollado aplicaciones con <strong>Vue.js, Django, .NET y Angular</strong>
+                en entornos de producción crítica.
                 <br><br>
-                Compagino mi actividad profesional con el desarrollo de una aplicación Android en Kotlin (beta cerrada) y labores de mentoría técnica.
+                Compatibilizo mi actividad profesional con el desarrollo de una aplicación Android en Kotlin (beta cerrada) y
+                mentoría técnica.
             </div>
         </header>
 
         <main>
             <!-- COLUMNA PRINCIPAL: EXPERIENCIA -->
             <div class="main">
-                <!-- CONTACTO (igual) -->
+                <!-- CONTACTO -->
                 <div class="seccion" style="margin-top: 2rem;">
                     <h2>CONTACTO</h2>
-                    <div style="display: flex; flex-direction: row; justify-content: flex-start; gap: 1.4rem; flex-wrap: wrap;">
-                        <div class="contacto-item">📧 ivan_dev@outlook.es</div>
-                        <div class="contacto-item">📞 +34 605 81 55 94</div>
-                        <div class="contacto-item">📍 Guadalajara · Madrid</div>
+                    <div
+                        style="display: flex; flex-direction: row; justify-content: flex-start; gap: 1.4rem; flex-wrap: wrap;">
+                        <div class="contacto-item">ivan_dev@outlook.es</div>
+                        <div class="contacto-item">+34 605 81 55 94</div>
+                        <div class="contacto-item">Guadalajara · Madrid</div>
                         <div class="contacto-item">
-                            <a href="https://www.linkedin.com/in/ivandev1999/" target="_blank" class="linkedin">🔗 linkedin.com/in/ivandev1999</a>
+                            <a href="https://www.linkedin.com/in/ivandev1999/" target="_blank" class="linkedin">linkedin.com/in/ivandev1999</a>
                         </div>
                         <div class="contacto-item">
-                            <a href="https://github.com/deduc" target="_blank" class="linkedin">🐙 github.com/deduc</a>
+                            <a href="https://github.com/deduc" target="_blank" class="linkedin">github.com/deduc</a>
                         </div>
                     </div>
                 </div>
-                
+
                 <h2>EXPERIENCIA PROFESIONAL</h2>
 
-                <!-- Edge Expertise - AHORA CON DJANGO (sin Vue) -->
+                <!-- Edge Expertise -->
                 <div class="experiencia-item">
                     <div class="empresa-fecha">
                         <div>
-                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Ingeniero de Software -</span>
+                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Ingeniero de
+                                Software -</span>
                             <span class="empresa">Edge Expertise</span>
                         </div>
-                        <span class="fecha">jul 2025 - ene 2026</span>
+                        <span class="fecha">jul 2025 · ene 2026</span>
                     </div>
+
+                    <!-- CONTEXTO CONSULTORÍA -->
+                    <div class="descripcion-empresa">
+                        Servicios de consultoría y desarrollo de software potenciado con IA. Lideré 3 proyectos web para
+                        clientes del sector bancario, logístico y vitivinícola.
+                    </div>
+
                     <ul class="logros">
                         <li>
-                            <strong>Planifiqué, desarrollé y ejecuté la migración de más de 20.000 registros financieros</strong> desde <strong>SharePoint (legacy)</strong> a <strong>PostgreSQL</strong>, diseñando modelos de datos normalizados para cuentas superiores a <strong>1 M€</strong> y <strong>reduciendo el tiempo de consulta de saldos de 15 s a menos de 1 s</strong>.
-                        </li>                        <li>
-                            <strong>Diseñé e integré una solución B2B de open banking utilizando la API PSD2 de Afterbanks</strong> para consultas bancarias en tiempo real, gestionando <strong>más de 1.000 operaciones mensuales</strong>.
+                            <strong>Planifiqué, desarrollé y ejecuté la migración de +20.000 registros financieros</strong> desde
+                            <strong>SharePoint</strong> a <strong>PostgreSQL</strong>, diseñando modelos normalizados
+                            para cuentas de <strong>+1M€</strong> y reduciendo el tiempo de consulta de saldos de
+                            <strong>15s a menos de 1s</strong>.
                         </li>
                         <li>
-                            <strong>Implementé un ERP completo con Django (backend) y HTML/CSS/JS (frontend)</strong> para Bodegas Sandovall, dando servicio a 10 usuarios internos.
+                            <strong>Diseñé e integré una solución B2B de open banking con API PSD2 de Afterbanks</strong>
+                            para consultas bancarias en tiempo real, gestionando <strong>+1.000 operaciones/mes</strong>.
                         </li>
                         <li>
-                            <strong>Diseñé e implementé un generador de formularios inteligentes con Django</strong>, que permite crear formularios web dinámicos a partir de PDF, Word y Excel.
-                            <strong>El sistema utiliza agentes de IA</strong> para interpretar la estructura de los documentos y <strong>generar automáticamente formularios</strong> HTML reactivos, manteniendo la <strong>exportación a los formatos originales</strong>.
+                            <strong>Implementé un ERP completo con Django (backend) y HTML/CSS/JS (frontend)</strong>
+                            para Bodegas Sandovall, dando servicio a 10 usuarios internos con gestión de tareas y horas
+                            altamente customizable.
+                        </li>
+                        <li>
+                            <strong>Diseñé e implementé un generador de formularios inteligentes con Django y agentes de IA</strong>,
+                            que permite crear formularios web dinámicos a partir de PDF, Word y Excel, manteniendo la
+                            exportación a los formatos originales.
+                        </li>
+                        <li>
+                            <strong>Participación en una aplicación web para Gestoría Rueda + DGT</strong> destinada a
+                            <strong>acelerar la transferencia de vehículos</strong> entre negocios y particulares,
+                            automatizando procesos administrativos con la DGT.
                         </li>
                     </ul>
                 </div>
 
-                <!-- Stratesys - AHORA CON VUE (corregido) -->
+                <!-- Stratesys -->
                 <div class="experiencia-item">
                     <div class="empresa-fecha">
                         <div>
-                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Desarrollador Full Stack -</span>
+                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Desarrollador
+                                Full Stack -</span>
                             <span class="empresa">Stratesys</span>
                         </div>
-                        <span class="fecha">ago 2024 - feb 2025</span>
+                        <span class="fecha">ago 2024 · feb 2025</span>
                     </div>
+                    
+                    <div class="descripcion-empresa">
+                        Servicios de consultoría, desarrollo de evolutivos y resolución de incidencias en aplicaciones web Full Stack para  para proyectos energéticos de Repsol, trabajando en entornos de alta disponibilidad y misión crítica.
+                    </div>
+
                     <ul class="logros">
                         <li>
-                            <strong>Desarrollo Full Stack con Vue.js (frontend), .NET (backend) y SQL Server</strong> para aplicaciones internas de Repsol, utilizadas por investigadores en experimentos y ensayos científicos.
+                            <strong>Desarrollo Full Stack con Vue.js, .NET y SQL Server</strong> para aplicaciones
+                            internas de Repsol, utilizadas por investigadores en experimentos científicos.
                         </li>
                         <li>
-                            <strong>Optimicé consultas SQL y operaciones CRUD</strong> en bases de datos con +100.000 registros, reduciendo carga en servidores en un 30% y mejorando tiempos de respuesta.
+                            <strong>Optimicé consultas SQL y operaciones CRUD</strong> en bases de datos con
+                            <strong>+100.000 registros</strong>, reduciendo carga en servidores en un <strong>30%</strong>.
                         </li>
                         <li>
-                            <strong>Implementé pipelines CI/CD en Microsoft Azure</strong> con zero-downtime deployments, <strong>asegurando disponibilidad 24/7 para usuarios de misión crítica</strong>.
+                            <strong>Implementé pipelines CI/CD en Microsoft Azure</strong> con zero-downtime deployments,
+                            asegurando disponibilidad <strong>24/7</strong> para usuarios de misión crítica.
                         </li>
                         <li>
-                            <strong>Participé en migraciones de modelos de datos</strong> y evolución de funcionalidades en entornos de alta disponibilidad.
+                            <strong>Participación en migraciones de modelos de datos y evolución de funcionalidades</strong> en entornos
+                            de alta disponibilidad.
                         </li>
                     </ul>
                 </div>
 
-                <!-- ICP (se mantiene igual, con Angular/.NET) -->
+                <!-- ICP -->
                 <div class="experiencia-item">
                     <div class="empresa-fecha">
                         <div>
-                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Desarrollador Full Stack -</span>
+                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Desarrollador
+                                Full Stack -</span>
                             <span class="empresa">ICP</span>
                         </div>
-                        <span class="fecha">abr 2023 - jun 2023</span>
+                        <span class="fecha">abr 2023 · jun 2023</span>
                     </div>
+                    
+                    <div class="descripcion-empresa">
+                        Servicios de consultoría y desarrollo Full Stack en entorno de consultoría real, participando en equipo ágil con entregas quincenales para la creación de una aplicación de gestión hotelera.
+                    </div>
+                    
                     <ul class="logros">
                         <li>
-                            <strong>Desarrollé aplicación web para gestión hotelera</strong> (Angular, .NET, SQL Server) siguiendo metodologías ágiles.
+                            <strong>Desarrollé una aplicación web para gestión hotelera</strong> (reservas y promociones) con
+                            <strong>Angular, .NET y SQL Server</strong> en entorno ágil con entregas quincenales.
                         </li>
                         <li>
-                            <strong>Resolución de incidencias y desarrollo de evolutivos funcionales</strong> durante todo el ciclo de vida del proyecto.
+                            <strong>Desarrollé aplicación web para gestión hotelera</strong> (reservas y promociones) con 
+                            <strong>Angular, .NET y SQL Server</strong> en entorno ágil con entregas quincenales, incluyendo 
+                            diseño responsive con <strong>Angular Material</strong> y control de versiones con <strong>Git/GitHub</strong>.
                         </li>
                         <li>
-                            <strong>Pruebas funcionales y code reviews</strong> con desarrolladores seniors, asegurando la calidad del producto y fortaleciendo mi conocimiento técnico mediante la experiencia directa.
+                            Resolución de incidencias y desarrollo de evolutivos funcionales durante todo el ciclo de vida
+                            del proyecto, desde análisis hasta despliegue.
+                        </li>
+                        <li>
+                            Pruebas funcionales y <strong>code reviews con desarrolladores seniors</strong>, asegurando la
+                            calidad del producto.
                         </li>
                     </ul>
                 </div>
@@ -365,7 +432,7 @@
 
             <!-- COLUMNA IZQUIERDA: SKILLS + PROYECTO + FORMACIÓN + DIVULGACIÓN -->
             <div class="sidebar">
-                <!-- STACK TECNOLÓGICO (CORREGIDO: Vue y Django primeros) -->
+                <!-- STACK TECNOLÓGICO -->
                 <div class="seccion">
                     <h2>STACK TECNOLÓGICO</h2>
                     <div class="secondary-color paddinleft1">
@@ -387,39 +454,43 @@
                     </div>
                 </div>
 
-                <!-- PROYECTO DESTACADO (App Kotlin) -->
+                <!-- PROYECTO DESTACADO (Aplicación Kotlin) -->
                 <div class="divulgacion">
                     <h4>PROYECTO DESTACADO</h4>
                     <div style="font-weight: 600; color: var(--detalle);">
-                        A COMPRAR · App Android
+                        A COMPRAR · Aplicación Android
                     </div>
                     <div style="color: var(--texto-secundario); margin: 0.5rem 0;">
                         Kotlin · Jetpack Compose · SQLite · Voyager
                     </div>
                     <ul class="logros" style="margin-top: 0.3rem;">
                         <li>
-                            <strong>Aplicación móvil que ayuda a mayores y jóvenes</strong> a crear sus propias listas de la compra y enviarlas a un carrito para saber <strong>qué productos de qué categorías se han comprado o faltan por comprar</strong>.
+                            Desarrollo una aplicación para crear listas de la compra colaborativas y gestionar productos clasificados por categorías.
+                            Escrita en <strong>Kotlin</strong> con <strong>Jetpack Compose</strong>, <strong>SQLite</strong> como base 
+                            de datos offline-first y navegación con <strong>Voyager</strong>.
+
+                            Desarrollo una aplicación para crear listas de la compra colaborativas y gestionar productos clasificados por categorías.
+
                         </li>
                         <li>
-                            <strong>Proyecto Android nativo escrito en Kotlin</strong>, utiliza <strong>Jetpack Compose</strong> para la construcción de la UI, <strong>SQLite como base de datos offline-first</strong> y <strong>navegación con Voyager</strong>.
+                            Proyecto en <strong>fase beta cerrada</strong> con usuarios reales que proporcionan feedback
+                            para identificar mejoras.
                         </li>
                         <li>
-                            <strong>App en fase beta cerrada</strong>, con usuarios reales que proporcionan feedback para <strong>identificar mejoras</strong>.
-                        </li>
-                        <li>
-                            <strong>Roadmap:</strong> <strong>sincronización en la nube</strong>, <strong>publicación en Play Store</strong> y <strong>venta a pequeños comercios</strong>.
+                            <strong>Roadmap:</strong> sincronización en la nube, publicación en Play Store y venta a
+                            pequeños comercios.
                         </li>
                     </ul>
                 </div>
-                                
+
                 <!-- FORMACIÓN -->
                 <div class="seccion">
                     <h2>FORMACIÓN</h2>
                     <div class="secondary-color paddinleft1">
-                        <div><strong>G.S. Desarrollo Aplicaciones Web (DAW)</strong> - IES Arcipreste de Hita · 2021-2023</div>
-                        <div><strong>G.S. Administración Sistemas (ASIR)</strong> - IES Arcipreste de Hita · 2019-2021</div>
-                        <div><strong>Curso Especialización Big Data & IA</strong> - IES Arcipreste de Hita · 2023-2024</div>
-                        <div><strong>Curso Java (240h)</strong> - Universidad Nebrija · 2024-2025</div>
+                        <div><strong>G.S. Desarrollo Aplicaciones Web (DAW)</strong> · IES Arcipreste de Hita · 2021-2023</div>
+                        <div><strong>G.S. Administración Sistemas (ASIR)</strong> · IES Arcipreste de Hita · 2019-2021</div>
+                        <div><strong>Curso Especialización Big Data & IA</strong> · IES Arcipreste de Hita · 2023-2024</div>
+                        <div><strong>Curso Java (240h)</strong> · Universidad Nebrija · 2024-2025</div>
                     </div>
                 </div>
 
@@ -432,15 +503,23 @@
                     </div>
                 </div>
 
-                <!-- NUEVA SECCIÓN: DIVULGACIÓN TÉCNICA (profesor movido aquí) -->
+                <!-- DIVULGACIÓN TÉCNICA (profesor particular + SEPE) -->
                 <div class="seccion">
                     <h2>DIVULGACIÓN TÉCNICA</h2>
                     <div class="paddinleft1 secondary-color">
-                        <div style="margin-bottom: 0.3rem;">
-                            <strong>Profesor particular de programación</strong> · Freelance · sept 2023 - actualidad
+                        <div style="margin-bottom: 0.8rem;">
+                            <strong>Profesor particular de programación</strong> · Freelance · sept 2023 · actualidad
+                            <div style="font-size: 0.9rem; margin-top: 0.2rem;">
+                                Mentoría a +10 estudiantes en Java, Python, HTML/CSS/JS/TS, fomentando buenas prácticas
+                                y pensamiento lógico.
+                            </div>
                         </div>
-                        <div style="font-size: 0.9rem;">
-                            Mentoría a +10 estudiantes en Java, Python, HTML/CSS/JS/TS, fomentando buenas prácticas y pensamiento lógico.
+                        <div>
+                            <strong>Profesor de informática</strong> · SEPE · ago 2023 · sept 2023
+                            <div style="font-size: 0.9rem; margin-top: 0.2rem;">
+                                Enseñé a un grupo de 25 personas desempleadas a usar el ordenador, ofimática, navegación
+                                web y creación de perfil en LinkedIn/InfoJobs.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -448,9 +527,11 @@
         </main>
 
         <!-- PIE -->
-        <div style="margin-top: 1.8rem; text-align: right; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid var(--borde-suave); padding-top: 0.5rem;">
+        <div
+            style="margin-top: 1.8rem; text-align: right; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid var(--borde-suave); padding-top: 0.5rem;">
             Perfil contrastado · Disponibilidad inmediata · Interés en estabilidad y crecimiento en empresa consolidada
         </div>
     </div>
 </body>
+
 </html>
