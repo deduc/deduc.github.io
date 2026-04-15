@@ -5,349 +5,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iván Gómez Calvo · Desarrollador Full Stack Vue + Django</title>
-    <style>
-        /* ---------- RESET PROFESIONAL ---------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* ---------- VARIABLES (PALETA CORPORATIVA) ---------- */
-        :root {
-            --fondo: #f8fafc;
-            --superficie: #ffffff;
-            --texto-principal: #0b1e33;
-            --texto-secundario: #33475b;
-            --detalle: #1e3a5f;
-            --acento: #ca8a04;
-            --borde-suave: #e2e8f0;
-            --sombra: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-        }
-
-        body {
-            background-color: var(--fondo);
-            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.5;
-            color: var(--texto-principal);
-            padding: 2rem 1rem;
-            display: flex;
-            justify-content: center;
-        }
-
-        .resume {
-            max-width: 1100px;
-            width: 100%;
-            background-color: var(--superficie);
-            box-shadow: var(--sombra);
-            border-radius: 20px;
-            overflow: hidden;
-            padding: 2.5rem 2.8rem;
-            border: 1px solid var(--borde-suave);
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: var(--detalle);
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--texto-secundario);
-            border-bottom: 3px solid var(--acento);
-            padding-bottom: 0.4rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--detalle);
-        }
-
-        .subtitulo-cargo {
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: var(--texto-secundario);
-            margin-bottom: 0.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .seccion {
-            margin-bottom: 2rem;
-        }
-
-        .contacto-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 0.7rem;
-            color: var(--texto-secundario);
-            font-size: 0.95rem;
-        }
-
-        .linkedin {
-            color: var(--detalle);
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .skill-badge {
-            display: inline-block;
-            background-color: #eef2f6;
-            color: var(--detalle);
-            padding: 0.25rem 0.8rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin: 0.2rem 0.15rem;
-            border: 1px solid transparent;
-        }
-
-        .skill-badge:hover {
-            border-color: var(--acento);
-        }
-
-        .experiencia-item {
-            margin-bottom: 2rem;
-        }
-
-        .empresa {
-            font-weight: 500;
-            color: var(--acento);
-            margin-bottom: 0.8rem;
-            font-size: 1.4rem;
-        }
-
-        .logros {
-            padding-left: 1.2rem;
-            list-style: none;
-        }
-
-        .logros li {
-            margin-bottom: 0.8rem;
-            padding-left: 0.4rem;
-            font-size: 0.95rem;
-            color: var(--texto-secundario);
-        }
-
-        .secondary-color {
-            color: var(--texto-secundario)
-        }
-
-        .logros li::before {
-            color: var(--acento);
-            font-weight: bold;
-        }
-
-        .about-mini {
-            background-color: #f1f5f9;
-            padding: 1.2rem 1.5rem;
-            border-radius: 16px;
-            margin: 1.5rem 0 0.5rem 0;
-            border-left: 6px solid var(--acento);
-            font-size: 0.98rem;
-            color: var(--texto-secundario);
-        }
-
-        .about-mini strong {
-            color: var(--detalle);
-            font-weight: 600;
-        }
-
-        /* NUEVA: Estilo para sección de divulgación */
-        .divulgacion {
-            background-color: #f8fafc;
-            border: 1px dashed var(--borde-suave);
-            border-radius: 12px;
-            padding: 1rem 1.2rem;
-            margin: 1rem 0 0.5rem 0;
-        }
-
-        .divulgacion h4 {
-            color: var(--detalle);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        @media print {
-            body {
-                background-color: white;
-                padding: 0;
-            }
-
-            .resume {
-                box-shadow: none;
-                border: none;
-                padding: 1.8rem 2rem;
-                border-radius: 0;
-            }
-
-            .skill-badge {
-                background-color: #eef2f6 !important;
-                border: 1px solid #ccc;
-            }
-
-            .about-mini {
-                background-color: #f1f5f9 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-        }
-
-        @media (max-width: 750px) {
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-        }
-
-        .paddinleft1 {
-            padding-left: 1rem;
-        }
-
-        .fecha {
-            color: var(--texto-secundario);
-            font-size: 0.95rem;
-        }
-
-        .empresa-fecha {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
-        }
-
-        .descripcion-empresa {
-            margin-bottom: 1rem;
-            font-style: italic;
-            color: var(--texto-secundario);
-            background-color: #f1f5f9;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--acento);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="resume">
         <header>
             <!-- CABECERA -->
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-                <div>
+            <div class="a1">
+                <div class="a2">
                     <h1>Iván Gómez Calvo</h1>
                     <div class="subtitulo-cargo">
-                        Desarrollador Full Stack (Vue, Django) y Android (Kotlin)
+                        Desarrollador de Software Full Stack y Android
                     </div>
-                    <div style="font-size: 1rem; color: var(--texto-secundario); margin-top: 0.2rem;">
-                        Experiencia en servicios de consultoría para banca, energía, logística y soluciones con IA
+                    <div class="a3">
+                        ivan_dev@outlook.es · +34 605 81 55 94 · Guadalajara / Madrid
                     </div>
-                    <span style="color: white;"></span>
+                    <div class="a6">
+                        <div class="a7">
+                            <strong>LinkedIn</strong>
+                            <a href="https://www.linkedin.com/in/ivandev1999/" target="_blank">linkedin.com/in/ivandev1999</a>
+                        </div>
+                        <div class="a7">
+                            <strong>GitHub</strong>
+                            <a href="https://github.com/deduc" target="_blank">github.com/deduc</a>
+                        </div>
+                    </div>
                 </div>
-                <img src="https://avatars.githubusercontent.com/u/127850919?v=4" alt="Foto de perfil"
-                    style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--borde-suave);">
+                <div class="a4">
+                    <img src="https://avatars.githubusercontent.com/u/127850919?v=4" class="a5" alt="Foto de perfil">
+                </div>
             </div>
 
             <!-- RESUMEN EJECUTIVO -->
             <div class="about-mini">
-                <strong>Desarrollador Full Stack con experiencia en banca (Grupo SEG) y energía (Repsol).</strong>
-                He migrado <strong>+20.000 registros financieros</strong> a PostgreSQL para clientes con cuentas de
-                <strong>+1M€</strong>, y desarrollado aplicaciones con <strong>Vue.js, Django, .NET y Angular</strong>
-                en entornos de producción crítica.
+                <strong>Desarrollador de Software + IA</strong> con experiencia en <strong>servicios de consultoría</strong>, 
+                manteniendo proyectos web para <strong>empresas del sector bancario, logístico y energético, como Repsol</strong>,
+                asegurando fiabilidad y alta disponibilidad en entornos críticos.
                 <br><br>
-                Compatibilizo mi actividad profesional con mentorías técnicas y el desarrollo de una aplicación Android nativa escrita en Kotlin (beta cerrada).
+                
+                El <strong>mayor logro</strong> de mi carrera profesional es crear <strong>una migración de +20.000 registros financieros</strong> a clientes cuyas cuentas bancarias <strong>superaban el millón de euros</strong>.
+                <br><br>
+                
+                Compagino mi actividad profesional con <strong>mentorías técnicas</strong> y el <strong>desarrollo de una aplicación Android</strong>
+                (proyecto personal) que actualmente <strong>ayuda a la gestión de inventario de hogares y pequeñas empresas</strong>.
             </div>
         </header>
 
-        <main>
+        <!-- EXPERIENCIA LABORAL -->
+        <main class="a8">
             <!-- COLUMNA PRINCIPAL: EXPERIENCIA -->
-            <div class="main">
-                <!-- CONTACTO -->
-                <div class="seccion" style="margin-top: 2rem;">
-                    <h2>CONTACTO</h2>
-                    <div
-                        style="display: flex; flex-direction: row; justify-content: flex-start; gap: 1.4rem; flex-wrap: wrap;">
-                        <div class="contacto-item">ivan_dev@outlook.es</div>
-                        <div class="contacto-item">+34 605 81 55 94</div>
-                        <div class="contacto-item">Guadalajara · Madrid</div>
-                        <div class="contacto-item">
-                            <a href="https://www.linkedin.com/in/ivandev1999/" target="_blank"
-                                class="linkedin">linkedin.com/in/ivandev1999</a>
-                        </div>
-                        <div class="contacto-item">
-                            <a href="https://github.com/deduc" target="_blank" class="linkedin">github.com/deduc</a>
-                        </div>
-                    </div>
-                </div>
-
-                <h2>EXPERIENCIA PROFESIONAL</h2>
-
+            <h2>EXPERIENCIA PROFESIONAL</h2>
+            <div class="padding-left-1">
                 <!-- Edge Expertise -->
                 <div class="experiencia-item">
                     <div class="empresa-fecha">
                         <div>
-                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Ingeniero de
-                                Software -</span>
-                            <span class="empresa">Edge Expertise</span>
+                            <span class="subtitulo-cargo a10">Ingeniero de Software -</span>
+                            <span class="empresa">Edge Expertise S.L.</span>
                         </div>
-                        <span class="fecha">jul 2025 · ene 2026</span>
+                        <span class="fecha">6 meses · jul 2025 · ene 2026</span>
                     </div>
 
-                    <!-- CONTEXTO CONSULTORÍA -->
-                    <div class="descripcion-empresa">
-                        Servicios de consultoría y desarrollo de software potenciado con IA. Lideré 3 proyectos web para
-                        clientes del sector bancario, logístico y vitivinícola.
-                    </div>
-
-                    <ul class="logros">
+                    <ul class="lista-generica">
                         <li>
-                            <strong>Planifiqué, desarrollé y ejecuté la migración de +20.000 registros
-                                financieros</strong> desde
-                            <strong>SharePoint</strong> a <strong>PostgreSQL</strong>, diseñando modelos normalizados
-                            para cuentas de <strong>+1M€</strong> y reduciendo el tiempo de consulta de saldos de
+                            Encargado de 
+                            <strong>planificar, desarrollar y ejecutar</strong> 
+                            una 
+                            <strong>migración de +20.000 registros financieros</strong> 
+                            de una base de datos donde figuraban 
+                            <strong>perfiles bancarios importantes con más de 1M€</strong>
+                            y 
+                            <strong>reduje</strong> 
+                            el tiempo de consulta de saldos de 
                             <strong>15s a menos de 1s</strong>.
                         </li>
                         <li>
-                            <strong>Diseñé e integré una solución B2B de open banking con API PSD2 de
-                                Afterbanks</strong>
-                            para consultas bancarias en tiempo real, gestionando <strong>+1.000
-                                operaciones/mes</strong>.
+                            Tras la migración, me encargué de que los clientes autenticados pudieran 
+                            <strong>acceder a la información</strong> 
+                            de sus cuentas mediante una 
+                            <strong>solución B2B de open banking con API PSD2 de Afterbanks</strong>.
                         </li>
                         <li>
-                            <strong>Implementé un ERP completo con Django (backend) y HTML/CSS/JS (frontend)</strong>
-                            para Bodegas Sandovall, dando servicio a 10 usuarios internos con gestión de tareas y horas
-                            altamente customizable.
+                            <strong>Creación de un ERP</strong>
+                            (Enterprise Resource Planning)
+                            para Bodegas Sandovall, 
+                            dando
+                            <strong>servicio a 10 trabajadores</strong>
+                            con gestión de tareas, responsables y horas.
                         </li>
                         <li>
-                            <strong>Diseñé e implementé un generador de formularios inteligentes con Django y agentes de
-                                IA</strong>,
-                            que permite crear formularios web dinámicos a partir de PDF, Word y Excel, manteniendo la
-                            exportación a los formatos originales.
+                            Creación de un
+                            <strong>generador de formularios dinámicos</strong>
+                            con agentes de IA, exportables a PDF, Word y Excel.
                         </li>
                         <li>
-                            <strong>Participación en una aplicación web para Gestoría Rueda + DGT</strong> destinada a
-                            <strong>acelerar la transferencia de vehículos</strong> entre negocios y particulares,
-                            automatizando procesos administrativos con la DGT.
+                            Creación y desarrollo de una aplicación web, en 
+                            <strong>colaboración con Gestoría Rueda y DGT</strong>
+                            para acelerar
+                            <strong>la transferencia de vehículos</strong> 
+                            entre
+                            <strong>negocios y particulares</strong>
+                            y agilizar procesos administrativos con la DGT.
                         </li>
                     </ul>
                 </div>
@@ -356,38 +115,37 @@
                 <div class="experiencia-item">
                     <div class="empresa-fecha">
                         <div>
-                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Desarrollador
-                                Full Stack -</span>
-                            <span class="empresa">Stratesys</span>
+                            <span class="subtitulo-cargo">Desarrollador Full Stack -</span>
+                            <span class="empresa">Stratesys + Repsol</span>
                         </div>
-                        <span class="fecha">ago 2024 · feb 2025</span>
+                        <span class="fecha">7 meses · ago 2024 · feb 2025</span>
                     </div>
 
-                    <div class="descripcion-empresa">
-                        Servicios de consultoría, desarrollo de evolutivos y resolución de incidencias en aplicaciones
-                        web Full Stack para para proyectos energéticos de Repsol, trabajando en entornos de alta
-                        disponibilidad y misión crítica.
-                    </div>
-
-                    <ul class="logros">
+                    <ul class="lista-generica">
                         <li>
-                            <strong>Desarrollo Full Stack con Vue.js, .NET y SQL Server</strong> para aplicaciones
-                            internas de Repsol, utilizadas por investigadores en experimentos científicos.
+                            Desarrollo de aplicaciones web para
+                            <strong>proyectos estratégicos de Repsol</strong>
+                            , realizando soporte técnico, desarrollo de evolutivos y resolución de incidencias.
                         </li>
                         <li>
-                            <strong>Optimicé consultas SQL y operaciones CRUD</strong> en bases de datos con
-                            <strong>+100.000 registros</strong>, reduciendo carga en servidores en un
-                            <strong>30%</strong>.
+                            <strong>Equipo consolidado</strong>
+                            de 5 desarrolladores coordinados trabajando con
+                            <strong>metodologías ágiles</strong>
+                            y reuniones periódicas con el objetivo de debatir y plantear 
+                            <strong>oportunidades de mejora, aspectos técnicos, visuales y funcionales.</strong>
                         </li>
                         <li>
-                            <strong>Implementé pipelines CI/CD en Microsoft Azure</strong> con zero-downtime
-                            deployments,
-                            asegurando disponibilidad <strong>24/7</strong> para usuarios de misión crítica.
+                            <strong>Optimicé consultas SQL y ejecuté migraciones</strong> 
+                            en bases de datos con
+                            <strong>+100.000 registros</strong>
+                            , reduciendo carga en servidores en un
+                            <strong>30%</strong>
+                            , garantizando fiabilidad y alta disponibilidad.
                         </li>
                         <li>
-                            <strong>Participación en migraciones de modelos de datos y evolución de
-                                funcionalidades</strong> en entornos
-                            de alta disponibilidad.
+                            Utilizamos el componente
+                            <strong>AG Grid</strong>
+                            para la visualización de datos en componentes gráficos y tablas con filtros, ordenación y paginación.
                         </li>
                     </ul>
                 </div>
@@ -396,97 +154,55 @@
                 <div class="experiencia-item">
                     <div class="empresa-fecha">
                         <div>
-                            <span class="subtitulo-cargo" style="font-size: 1.4rem; font-weight: 500;">Desarrollador
-                                Full Stack -</span>
-                            <span class="empresa">ICP</span>
+                            <span class="subtitulo-cargo">Desarrollador Full Stack -</span>
+                            <span class="empresa">ICP Logistics</span>
                         </div>
-                        <span class="fecha">abr 2023 · jun 2023</span>
+                        <span class="fecha">3 meses · abr 2023 · jun 2023</span>
                     </div>
 
-                    <div class="descripcion-empresa">
-                        Servicios de consultoría y desarrollo Full Stack en entorno de consultoría real, participando en
-                        equipo ágil con entregas quincenales para la creación de una aplicación de gestión hotelera.
-                    </div>
-
-                    <ul class="logros">
+                    <ul class="lista-generica">
                         <li>
-                            <strong>Desarrollé una aplicación web para gestión hotelera</strong> (reservas y
-                            promociones) con
-                            <strong>Angular, .NET y SQL Server</strong> en entorno ágil con entregas quincenales.
+                            Desarrollo de una aplicación web para gestionar las
+                            <strong>reservas y promociones de hoteles</strong> 
+                            con las tecnologías
+                            <strong>Angular, .NET y SQL Server</strong>
+                            , haciendo énfasis en el
+                            <strong>responsive</strong>
+                            y el uso de componentes
+                            <strong>Angular Material</strong>.
                         </li>
                         <li>
-                            <strong>Desarrollé aplicación web para gestión hotelera</strong> (reservas y promociones)
-                            con
-                            <strong>Angular, .NET y SQL Server</strong> en entorno ágil con entregas quincenales,
-                            incluyendo
-                            diseño responsive con <strong>Angular Material</strong> y control de versiones con
-                            <strong>Git/GitHub</strong>.
-                        </li>
-                        <li>
-                            Resolución de incidencias y desarrollo de evolutivos funcionales durante todo el ciclo de
-                            vida
-                            del proyecto, desde análisis hasta despliegue.
-                        </li>
-                        <li>
-                            Pruebas funcionales y <strong>code reviews con desarrolladores seniors</strong>, asegurando
-                            la
-                            calidad del producto.
+                            <strong>Resolución de incidencias y desarrollo de evolutivos</strong>
+                            durante las distintas etapas del ciclo de desarrollo de software,
+                            desde el análisis hasta el despliegue.
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- COLUMNA IZQUIERDA: SKILLS + PROYECTO + FORMACIÓN + DIVULGACIÓN -->
             <!-- STACK TECNOLÓGICO -->
             <div class="seccion">
                 <h2>STACK TECNOLÓGICO</h2>
-                <div class="secondary-color paddinleft1">
-                    <div style="margin-bottom: 0.8rem;">
-                        <strong>Frontend:</strong> Vue.js, Angular, TypeScript, HTML/CSS/JavaScript
-                    </div>
-                    <div style="margin-bottom: 0.8rem;">
-                        <strong>Backend:</strong> Django (Python), .NET, ASP.NET Core, REST APIs
-                    </div>
-                    <div style="margin-bottom: 0.8rem;">
-                        <strong>Android:</strong> Kotlin, Jetpack Compose, SQLite
-                    </div>
-                    <div style="margin-bottom: 0.8rem;">
-                        <strong>Bases de Datos:</strong> PostgreSQL, SQL Server
-                    </div>
-                    <div style="margin-bottom: 0.8rem;">
-                        <strong>Herramientas:</strong> Docker, Git/GitHub Actions, CI/CD (Azure), Linux
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROYECTO DESTACADO (Aplicación Kotlin) -->
-            <div class="divulgacion">
-                <h4>PROYECTO DESTACADO</h4>
-                <div style="font-weight: 600; color: var(--detalle);">
-                    A COMPRAR · Aplicación Android
-                </div>
-                <div style="color: var(--texto-secundario); margin: 0.5rem 0;">
-                    Kotlin · Jetpack Compose · SQLite · Voyager
-                </div>
-                <ul class="logros" style="margin-top: 0.3rem;">
+                <ul class="lista-generica secondary-color">
                     <li>
-                        Desarrollo una aplicación para crear listas de la compra colaborativas y gestionar productos
-                        clasificados por categorías.
-                        Escrita en <strong>Kotlin</strong> con <strong>Jetpack Compose</strong>, <strong>SQLite</strong>
-                        como base
-                        de datos offline-first y navegación con <strong>Voyager</strong>.
-
-                        Desarrollo una aplicación para crear listas de la compra colaborativas y gestionar productos
-                        clasificados por categorías.
-
+                        <strong>Frontend:</strong>
+                        Vue, Angular, TypeScript, JavaScript, HTML, CSS.
                     </li>
                     <li>
-                        Proyecto en <strong>fase beta cerrada</strong> con usuarios reales que proporcionan feedback
-                        para identificar mejoras.
+                        <strong>Backend:</strong>
+                        Python Django, .NET, Java Spring, REST APIs.
                     </li>
                     <li>
-                        <strong>Roadmap:</strong> sincronización en la nube, publicación en Play Store y venta a
-                        pequeños comercios.
+                        <strong>Bases de Datos:</strong>
+                        PostgreSQL, SQL Server.
+                    </li>
+                    <li>
+                        <strong>Android:</strong>
+                        Kotlin, Jetpack Compose.
+                    </li>
+                    <li>
+                        <strong>Herramientas:</strong>
+                        Docker, Git, Azure, Linux.
                     </li>
                 </ul>
             </div>
@@ -494,50 +210,52 @@
             <!-- FORMACIÓN -->
             <div class="seccion">
                 <h2>FORMACIÓN</h2>
-                <div class="secondary-color paddinleft1">
-                    <div><strong>G.S. Administración Sistemas (ASIR)</strong> · IES Arcipreste de Hita · 2019-2021</div>
-                    <div><strong>G.S. Desarrollo Aplicaciones Web (DAW)</strong> · IES Arcipreste de Hita · 2021-2023
-                    </div>
-                    <div><strong>Curso Especialización Big Data & IA</strong> · IES Arcipreste de Hita · 2023-2024</div>
-                    <div><strong>Curso Java (240h)</strong> · Universidad Nebrija · 2024-2025</div>
-                </div>
+                <ul class="lista-generica secondary-color">
+                    <li>
+                        <strong>G.S. Administración Sistemas (ASIR)</strong> · IES Arcipreste de Hita · 2019-2021
+                    </li>
+                    <li>
+                        <strong>G.S. Desarrollo Aplicaciones Web (DAW)</strong> · IES Arcipreste de Hita · 2021-2023
+                    </li>
+                    <li>
+                        <strong>Curso Especialización Big Data & IA</strong> · IES Arcipreste de Hita · 2023-2024
+                    </li>
+                    <li>
+                        <strong>Curso Java (240h)</strong> · Universidad Nebrija · 2024-2025
+                    </li>
+                </ul>
             </div>
 
             <!-- IDIOMAS -->
             <div class="seccion">
                 <h2>IDIOMAS</h2>
-                <div class="paddinleft1 secondary-color">
-                    <div><strong>Español:</strong> Nativo</div>
-                    <div><strong>Inglés:</strong> B1-B2 (en curso en Escuela Oficial de Idiomas)</div>
-                </div>
+                <ul class="lista-generica secondary-color">
+                    <li>
+                        <strong>Español:</strong> Nativo
+                    </li>
+                    <li>
+                        <strong>Inglés:</strong> B1-B2 (en curso en Escuela Oficial de Idiomas)
+                    </li>
+                </ul>
             </div>
 
             <!-- DIVULGACIÓN TÉCNICA (profesor particular + SEPE) -->
             <div class="seccion">
                 <h2>DIVULGACIÓN TÉCNICA</h2>
-                <div class="paddinleft1 secondary-color">
-                    <div style="margin-bottom: 0.8rem;">
-                        <strong>Profesor particular de programación</strong> · Freelance · sept 2023 · actualidad
-                        <div style="font-size: 0.9rem; margin-top: 0.2rem;">
-                            Mentoría a +10 estudiantes en Java, Python, HTML/CSS/JS/TS, fomentando buenas prácticas
-                            y pensamiento lógico.
-                        </div>
-                    </div>
-                    <div>
-                        <strong>Profesor de informática</strong> · SEPE · ago 2023 · sept 2023
-                        <div style="font-size: 0.9rem; margin-top: 0.2rem;">
-                            Enseñé a un grupo de 25 personas desempleadas a usar el ordenador, ofimática, navegación
-                            web y creación de perfil en LinkedIn/InfoJobs.
-                        </div>
-                    </div>
-                </div>
+                <ul class="lista-generica">
+                    <li>
+                        <strong>Profesor particular de programación</strong>
+                        <span>a 10 alumnos</span>
+                        <span>· sept 2023 · actualidad</span>
+                    </li>
+                    <li>
+                        <strong>Profesor de informática</strong>
+                        <span>a 25 personas</span>
+                        <span>· SEPE · ago 2023 · sept 2023</span>
+                    </li>
+                </ul>
             </div>
         </main>
-
-        <!-- PIE -->
-        <div style="margin-top: 1.8rem; text-align: right; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid var(--borde-suave); padding-top: 0.5rem;">
-            Perfil contrastado · Disponibilidad inmediata · Interés en estabilidad y crecimiento en empresa consolidada
-        </div>
     </div>
 </body>
 

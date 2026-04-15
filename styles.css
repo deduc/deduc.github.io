@@ -1,0 +1,260 @@
+/* ---------- RESET PROFESIONAL ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+/* ---------- VARIABLES (PALETA CORPORATIVA) ---------- */
+:root {
+    --fondo: #f8fafc;
+    --superficie: #ffffff;
+    --texto-principal: #0b1e33;
+    --texto-secundario: #33475b;
+    --detalle: #1e3a5f;
+    --acento: #ca8a04;
+    --borde-suave: #e2e8f0;
+    --sombra: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+}
+
+body {
+    background-color: var(--fondo);
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+    color: var(--texto-principal);
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.resume {
+    max-width: 1100px;
+    width: 100%;
+    background-color: var(--superficie);
+    box-shadow: var(--sombra);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 2.5rem 2.8rem;
+    border: 1px solid var(--borde-suave);
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--detalle);
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--texto-secundario);
+    border-bottom: 3px solid var(--acento);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--detalle);
+}
+
+.subtitulo-cargo {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--texto-secundario);
+    margin-bottom: 0.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.seccion {
+    margin-bottom: 2rem;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.7rem;
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+.linkedin {
+    color: var(--detalle);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.skill-badge {
+    display: inline-block;
+    background-color: #eef2f6;
+    color: var(--detalle);
+    padding: 0.25rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0.2rem 0.15rem;
+    border: 1px solid transparent;
+}
+
+.skill-badge:hover {
+    border-color: var(--acento);
+}
+
+.experiencia-item {
+    margin-bottom: 2rem;
+}
+
+.empresa {
+    font-weight: 500;
+    color: var(--acento);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+}
+
+.lista-generica {
+    padding-left: 1.2rem;
+    list-style: none;
+}
+
+.lista-generica li {
+    padding-left: 0.4rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+    color: var(--texto-secundario);
+}
+
+.secondary-color {
+    color: var(--texto-secundario)
+}
+
+.lista-generica li::before {
+    color: var(--acento);
+    font-weight: bold;
+}
+
+.about-mini {
+    background-color: #f1f5f9;
+    padding: 1.2rem 1.5rem;
+    border-radius: 16px;
+    margin: 1.5rem 0 0.5rem 0;
+    border-left: 6px solid var(--acento);
+    font-size: 0.98rem;
+    color: var(--texto-secundario);
+}
+
+.about-mini strong {
+    color: var(--detalle);
+    font-weight: 600;
+}
+
+/* NUEVA: Estilo para sección de divulgación */
+.divulgacion {
+    background-color: #f8fafc;
+    border: 1px dashed var(--borde-suave);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.divulgacion h4 {
+    color: var(--detalle);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media print {
+    body {
+        background-color: white;
+        padding: 0;
+    }
+
+    .resume {
+        box-shadow: none;
+        border: none;
+        padding: 1.8rem 2rem;
+        border-radius: 0;
+    }
+
+    .skill-badge {
+        background-color: #eef2f6 !important;
+        border: 1px solid #ccc;
+    }
+
+    .about-mini {
+        background-color: #f1f5f9 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+@media (max-width: 750px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+.padding-left-1 {
+    padding-left: 1rem;
+}
+
+.fecha {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+.empresa-fecha {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.descripcion-empresa {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--texto-secundario);
+    background-color: #f1f5f9;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--acento);
+}
+
+/* ---------- CLASES AUXILIARES ---------- */
+.a1 { display: flex; align-items: center; flex-wrap: wrap; }
+.a2 { flex: 0 0 70%; max-width: 70%; }
+.a3 { font-size: 1rem; color: var(--texto-secundario); margin-top: 0.2rem; }
+.a4 { flex: 0 0 30%; max-width: 30%; display: flex; justify-content: center; }
+.a5 { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--borde-suave); }
+.a6 { display: flex; gap: 1rem; }
+.a7 { display: flex; gap: 0.4rem; }
+.a8 { margin-top: 2rem; }
+.a9 { display: flex; flex-direction: row; justify-content: flex-start; gap: 1.4rem; flex-wrap: wrap; }
+.a10 { font-size: 1.4rem; font-weight: 500; }
+.a11 { font-weight: 600; color: var(--detalle); }
+.a12 { color: var(--texto-secundario); margin: 0.5rem 0; }
+.a13 { margin-top: 0.3rem; }
+.a14 { margin-bottom: 0.8rem; }
+.a15 { font-size: 0.9rem; margin-top: 0.2rem; }
+.a16 { margin-top: 1.8rem; text-align: right; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid var(--borde-suave); padding-top: 0.5rem; }
+.a17 { margin-bottom: 0.8rem; }
