@@ -1,283 +1,227 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iván Gómez Calvo · Desarrollador Full Stack Vue + Django</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Iván Gómez · Desarrollador Full Stack</title>
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
-
 <body>
-    <div class="resume">
-        <header>
-            <!-- CABECERA -->
-            <div class="a1">
-                <div class="a2">
-                    <h1>Iván Gómez Calvo</h1>
-                    <div class="subtitulo-cargo">
-                        Desarrollador de Software Full Stack y Android
-                    </div>
-                    <div class="a3">
-                        ivan_dev@outlook.es · +34 605 81 55 94 · Guadalajara / Madrid
-                    </div>
-                    <div class="a6">
-                        <div class="a7">
-                            <strong>LinkedIn</strong>
-                            <a href="https://www.linkedin.com/in/ivandev1999/" target="_blank">linkedin.com/in/ivandev1999</a>
-                        </div>
-                        <div class="a7">
-                            <strong>GitHub</strong>
-                            <a href="https://github.com/deduc" target="_blank">github.com/deduc</a>
-                        </div>
-                    </div>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <div class="avatar-wrapper">
+                    <img src="https://avatars.githubusercontent.com/u/127850919?v=4" alt="Iván" class="avatar">
                 </div>
-                <div class="a4">
-                    <img src="https://avatars.githubusercontent.com/u/127850919?v=4" class="a5" alt="Foto de perfil">
-                </div>
-            </div>
-
-            <!-- RESUMEN EJECUTIVO -->
-            <div class="about-mini">
-                <strong>Desarrollador de Software + IA</strong> 
-                con experiencia en 
-                <strong>servicios de consultoría</strong>, 
-                manteniendo proyectos web para 
-                <strong>empresas del sector bancario, logístico y energético, como Repsol</strong>,
-                asegurando fiabilidad y alta disponibilidad en entornos críticos.
-                <br><br>
-                
-                El 
-                <strong>mayor logro</strong>
-                de mi carrera profesional es crear 
-                <strong>una migración de +20.000 registros financieros</strong>
-                a clientes cuyas cuentas bancarias 
-                <strong>superaban el millón de euros</strong>.
-                <br><br>
-                
-                Compagino mi actividad profesional con 
-                <strong>mentorías técnicas</strong> 
-                a alumnos que estudian ingeniería informática y el 
-                <strong>desarrollo de una aplicación Android</strong>
-                (proyecto personal) que 
-                <strong>actualmente ayuda a la gestión de inventario de hogares y pequeñas empresas</strong>.
+                <h1 class="hero-title">Iván Gómez - deduc</h1>
+                <p class="hero-subtitle">Desarrollador Full Stack y Android</p>
+                <p class="hero-desc">
+                    Creo aplicaciones web y móviles que resuelven problemas reales.
+                    Experiencia sólida en UX/UI, procesos ETL y migraciones de datos.
+                </p>
+                <p class="hero-contact">
+                    ivan_dev@outlook.es &middot; España - Madrid / Guadalajara
+                </p>
+                <p class="hero-contact">
+                    Beneficiario del Sistema Nacional de Garantía Juvenil
+                </p>
+                <nav class="hero-links">
+                    <a href="./pages/cv.html" class="btn btn-outline" target="_blank">CV</a>
+                    <a href="https://github.com/deduc" target="_blank" class="btn btn-outline" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/ivandev1999/" target="_blank" class="btn btn-outline" target="_blank">LinkedIn</a>
+                </nav>
             </div>
         </header>
 
-        <!-- EXPERIENCIA LABORAL -->
-        <main class="a8">
-            <!-- COLUMNA PRINCIPAL: EXPERIENCIA -->
-            <h2>EXPERIENCIA PROFESIONAL</h2>
-            <div class="padding-left-1">
-                <!-- Edge Expertise -->
-                <div class="experiencia-item">
-                    <div class="empresa-fecha">
-                        <div>
-                            <span class="subtitulo-cargo a10">Ingeniero de Software -</span>
-                            <span class="empresa">Edge Expertise S.L.</span>
-                        </div>
-                        <span class="fecha">6 meses · jul 2025 · dic 2026</span>
-                    </div>
+        <section class="section featured">
+            <h2 class="section-title">Proyectos destacados</h2>
+            <div class="featured-grid">
+                <a href="https://github.com/deduc/a-comprar-apk" target="_blank" class="featured-card card-1" style="--i:0">
+                    <div class="fc-badge">&#x1F451;</div>
+                    <h3>A-Comprar</h3>
+                    <p>Aplicación para gestionar inventario mediante listas y carritos de la compra. Apta para pequeñas empresas y familias.</p>
+                    <div class="tags"><span class="fc-lang">Kotlin</span><span class="fc-lang">Jetpack Compose</span><span class="fc-lang">SQLite</span></div>
+                </a>
+                <a href="https://github.com/deduc/blockgames-apk" target="_blank" class="featured-card card-2" style="--i:1">
+                    <h3>BlockGames</h3>
+                    <p>Minijuegos de puzles y bloques para Android. Entretenimiento directo en tu móvil.</p>
+                    <div class="tags"><span class="fc-lang">Kotlin</span></div>
+                </a>
+                <a href="https://github.com/deduc/my-docker-gui" target="_blank" class="featured-card card-3" style="--i:2">
+                    <h3>My Docker GUI</h3>
+                    <p>Docker GUI sin aprender 100 comandos. Electron + JavaScript + HTML + CSS.</p>
+                    <div class="tags"><span class="fc-lang">Electron</span><span class="fc-lang">JavaScript</span><span class="fc-lang">HTML</span><span class="fc-lang">CSS</span></div>
+                </a>
+            </div>
+        </section>
 
-                    <ul class="lista-generica">
-                        <li>
-                            Encargado de planificar, desarrollar y ejecutar una 
-                            <strong>migración de +20.000 registros financieros</strong> 
-                            en una base de datos donde figuraban 
-                            <strong>importantes perfiles bancarios</strong>
-                            con más de 1M€ y
-                            <strong>reduje</strong> 
-                            el tiempo de consulta de datos
-                            <strong>a menos de 1s</strong>
-                            mediante la 
-                            <strong>API de Afterbanks y PSD2 (Open Banking).</strong>
-                        </li>
-                        <li>
-                            Creación de un
-                            <strong>ERP (web y móvil)</strong>
-                            para Bodegas Sandovall y un
-                            <strong>generador de formularios dinámicos</strong>
-                            con agentes de IA, exportables a PDF, Word y Excel.
-                        </li>
-                        <li>
-                            Creación y desarrollo de una aplicación web, en colaboración con 
-                            <strong>Gestoría Rueda y DGT,</strong>
-                            agilizando la
-                            <strong>transferencia de vehículos.</strong> 
-                        </li>
-                    </ul>
-                </div>
+        <section class="section tabs-section">
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="proyectos">Mis proyectos</button>
+                <button class="tab-btn" data-tab="experiencia">Experiencia profesional</button>
+            </div>
 
-                <!-- Stratesys -->
-                <div class="experiencia-item">
-                    <div class="empresa-fecha">
-                        <div>
-                            <span class="subtitulo-cargo a10">Desarrollador Full Stack -</span>
-                            <span class="empresa">Stratesys + Repsol</span>
-                        </div>
-                        <span class="fecha">7 meses · ago 2024 · feb 2025</span>
-                    </div>
-
-                    <ul class="lista-generica">
-                        <li>
-                            Desarrollo de aplicaciones web para
-                            <strong>proyectos estratégicos de Repsol:</strong>
-                            Creación de interfaces web reactivas con API RESTful.
-                        </li>
-                        <li>
-                            <strong>Optimización de consultas SQL, ejecuté migraciones</strong> 
-                            en bases de datos con
-                            <strong>+100.000 registros.</strong>
-                        </li>
-                        <li>
-                            Utilizamos la librería
-                            <strong>AG Grid</strong>
-                            para la visualización de datos en 
-                            <strong>componentes gráficos y tablas</strong>
-                            con filtros, ordenación y paginación.
-                        </li>
-                        <li>
-                            <strong>Equipo consolidado</strong>
-                            de 5 desarrolladores coordinados trabajando con
-                            <strong>metodologías ágiles</strong>
-                            y reuniones periódicas con el objetivo de debatir y plantear 
-                            <strong>oportunidades de mejora, aspectos técnicos, visuales y funcionales.</strong>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- ICP -->
-                <div class="experiencia-item">
-                    <div class="empresa-fecha">
-                        <div>
-                            <span class="subtitulo-cargo a10">Desarrollador Full Stack -</span>
-                            <span class="empresa">ICP Logistics</span>
-                        </div>
-                        <span class="fecha">3 meses · abr 2023 · jun 2023</span>
-                    </div>
-
-                    <ul class="lista-generica">
-                        <li>
-                            Desarrollo de una aplicación web para gestionar las
-                            <strong>reservas y promociones de hoteles</strong> 
-                            con las tecnologías
-                            <strong>Angular, .NET y SQL Server</strong>
-                            , haciendo énfasis en el
-                            <strong>responsive</strong>
-                            y el uso de componentes
-                            <strong>Angular Material</strong>.
-                        </li>
-                        <li>
-                            <strong>Resolución de incidencias y desarrollo de evolutivos</strong>
-                            durante las distintas etapas del ciclo de desarrollo de software,
-                            desde el análisis hasta el despliegue.
-                        </li>
-                    </ul>
+            <div class="tab-content active" id="tab-proyectos">
+                <div class="projects-grid">
+                    <a href="https://github.com/deduc/TFG-Hotel" target="_blank" class="project-card" style="--i:0">
+                        <h3>TFG Hotel</h3>
+                        <p>Sistema de gestión hotelera. Trabajo de Fin de Grado DAW.</p>
+                        <div class="tags"><span class="lang-tag">Angular</span><span class="lang-tag">TypeScript</span><span class="lang-tag">HTML</span><span class="lang-tag">CSS</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/clon-traductor-google-azure" target="_blank" class="project-card" style="--i:1">
+                        <h3>Clon Traductor</h3>
+                        <p>Clon del Traductor de Google usando Azure Cognitive Services + Flask.</p>
+                        <div class="tags"><span class="lang-tag">HTML</span><span class="lang-tag">Python</span><span class="lang-tag">CSS</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/paises-y-temperaturas" target="_blank" class="project-card" style="--i:2">
+                        <h3>Países y Temperaturas</h3>
+                        <p>Consulta información de países europeos y sus temperaturas vía API.</p>
+                        <div class="tags"><span class="lang-tag">Python</span><span class="lang-tag">HTML</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/traductor-catalogador-texto-api-openai" target="_blank" class="project-card" style="--i:3">
+                        <h3>Traductor + OpenAI</h3>
+                        <p>Traduce y cataloga texto automáticamente usando la API de OpenAI. Jupyter + Python.</p>
+                        <div class="tags"><span class="lang-tag">Python</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/hikarikan-front" target="_blank" class="project-card" style="--i:4">
+                        <h3>Hikarikan</h3>
+                        <p>Web para la escuela de Kárate Hikarikan. Vue + TypeScript + SCSS.</p>
+                        <div class="tags"><span class="lang-tag">Vue</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/animacionCaras" target="_blank" class="project-card" style="--i:5">
+                        <h3>Animación Caras</h3>
+                        <p>Caras animadas al pasar el ratón. HTML + CSS interactivo.</p>
+                        <div class="tags"><span class="lang-tag">HTML</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/SoniFy-API" target="_blank" class="project-card" style="--i:6">
+                        <h3>SoniFy API</h3>
+                        <p>API REST en C# .NET para el clon de Spotify con autenticación y catálogo.</p>
+                        <div class="tags"><span class="lang-tag">C# .NET</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/find-luigi" target="_blank" class="project-card" style="--i:7">
+                        <h3>Find Luigi</h3>
+                        <p>Minijuego estilo "Find Wally" con temática de Mario 64. HTML + CSS.</p>
+                        <div class="tags"><span class="lang-tag">HTML</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/MAPA-AndroidStudio" target="_blank" class="project-card" style="--i:8">
+                        <h3>Mapa Android</h3>
+                        <p>Aplicación Android con mapas interactivos. Kotlin + Android Studio.</p>
+                        <div class="tags"><span class="lang-tag">Kotlin</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/darksouls-death-counter" target="_blank" class="project-card" style="--i:9">
+                        <h3>Dark Souls Counter</h3>
+                        <p>Contador de muertes para tus partidas de Dark Souls. Python.</p>
+                        <div class="tags"><span class="lang-tag">Python</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/brilloPantalla" target="_blank" class="project-card" style="--i:10">
+                        <h3>brilloPantalla</h3>
+                        <p>Controles de brillo, contraste y temperatura de luz azul para Linux. Python.</p>
+                        <div class="tags"><span class="lang-tag">Python</span></div>
+                    </a>
+                    <a href="https://github.com/deduc/SoniFy-Front" target="_blank" class="project-card" style="--i:11">
+                        <h3>SoniFy Front</h3>
+                        <p>Clon de Spotify. Aplicación web con reproducción y playlists. TypeScript.</p>
+                        <div class="tags"><span class="lang-tag">TypeScript</span></div>
+                    </a>
                 </div>
             </div>
 
-            <br>
+            <div class="tab-content" id="tab-experiencia">
+                <div class="experience-list">
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <div>
+                                <span class="exp-role">Ingeniero de Software</span>
+                                <span class="exp-company">Edge Expertise S.L.</span>
+                            </div>
+                            <span class="exp-date">jul 2025 · dic 2026</span>
+                        </div>
+                        <ul>
+                            <li>Migración de +20.000 registros financieros con perfiles bancarios de &gt;1M€, reduciendo el tiempo de consulta a &lt;1s mediante la API de Afterbanks y PSD2.</li>
+                            <li>Creación de un ERP (web y móvil) para Bodegas Sandovall y un generador de formularios dinámicos con agentes de IA.</li>
+                            <li>Aplicación web para transferencia de vehículos en colaboración con Gestoría Rueda y DGT.</li>
+                        </ul>
+                        <div class="exp-apps">
+                            <h4>Aplicaciones desarrolladas:</h4>
+                            <ul>
+                                <li><strong>Pasarelas:</strong> Migración de datos financieros a web de consultas bancarias con tablas, gráficos, filtros, reactiva y responsive.</li>
+                                <li><strong>ERP Bodegas Sandovall:</strong> Aplicación web y móvil para fichar horarios y gestionar tareas asignadas.</li>
+                                <li><strong>Generador de formularios:</strong> Web responsive que genera formularios HTML con exportación a Excel, PDF y Word.</li>
+                                <li><strong>Fast Transfer / Gestiona Ya:</strong> Acelera la transferencia de vehículos entre empresas y/o particulares.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="seccion-doble-columna">
-                <!-- STACK TECNOLÓGICO -->
-                <div class="seccion">
-                    <h2>STACK TECNOLÓGICO</h2>
-                    <ul class="lista-generica secondary-color">
-                        <li>
-                            <strong>Frontend:</strong>
-                            Vue, Angular, TypeScript, JavaScript, HTML, CSS.
-                        </li>
-                        <li>
-                            <strong>Backend:</strong>
-                            Python Django, .NET, Java Spring, REST APIs.
-                        </li>
-                        <li>
-                            <strong>Bases de Datos:</strong>
-                            PostgreSQL, SQL Server.
-                        </li>
-                        
-                                                    <li>
-                            <strong>Android:</strong>
-                            Kotlin, Jetpack Compose.
-                        </li>
-                        <li>
-                            <strong>Herramientas:</strong>
-                            Docker, Git, Azure, Linux.
-                        </li>
-                    </ul>
-                </div>
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <div>
+                                <span class="exp-role">Desarrollador Full Stack</span>
+                                <span class="exp-company">Stratesys + Repsol</span>
+                            </div>
+                            <span class="exp-date">ago 2024 · feb 2025</span>
+                        </div>
+                        <ul>
+                            <li>Desarrollo de interfaces web reactivas con API RESTful para proyectos estratégicos de Repsol.</li>
+                            <li>Optimización de consultas SQL y migraciones en bases de datos con +100.000 registros.</li>
+                            <li>Visualización de datos con AG Grid y trabajo en equipo consolidado con metodologías ágiles.</li>
+                        </ul>
+                        <div class="exp-apps">
+                            <h4>Aplicaciones desarrolladas:</h4>
+                            <ul>
+                                <li>2 aplicaciones internas de Repsol (confidenciales) con datos masivos, exigiendo fiabilidad y alta disponibilidad.</li>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <div>
+                                <span class="exp-role">Profesor particular de Programación</span>
+                                <span class="exp-company">Autónomo</span>
+                            </div>
+                            <span class="exp-date">jun 2023 · actualidad</span>
+                        </div>
+                        <ul>
+                            <li>Clases particulares de programación a alumnos de ingeniería informática: Python, Java, SQL, HTML, CSS y JavaScript.</li>
+                            <li>Preparación de ejercicios, corrección de prácticas y mentoría en proyectos universitarios.</li>
+                        </ul>
+                    </div>
 
-                <!-- FORMACIÓN -->
-                <div class="seccion">
-                    <h2>FORMACIÓN</h2>
-                    <ul class="lista-generica secondary-color">
-                        <li>
-                            <strong>G.S. Administración Sistemas y Redes (ASIR)</strong> · 2019-2021
-                        </li>
-                        <li>
-                            <strong>G.S. Desarrollo Aplicaciones Web (DAW)</strong> · 2021-2023
-                        </li>
-                        <li>
-                            <strong>Curso Especialización Big Data & IA</strong> · 2023-2024
-                        </li>
-                        <li>
-                            <strong>Curso Java (240h)</strong> · Universidad Nebrija · 2024-2025
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="seccion-doble-columna">
-                <!-- DATOS DE INTERÉS -->
-                <div class="seccion">
-                    <h2>DATOS DE INTERÉS</h2>
-                    <ul class="lista-generica secondary-color">
-                        <li>
-                            <strong>Beneficiario del Sistema Nacional de Garantía Juvenil</strong>
-                        </li>
-                        <li>
-                            <strong>Carnet de conducir y coche propio.</strong>
-                        </li>
-                        <li>
-                            <strong>Disponibilidad</strong>
-                            para viajar y de incorporación inmediata.
-                        </li>
-                        <li>
-                            Español nativo.
-                            <strong>Inglés B2</strong>
-                            en curso en la escuela oficial de idiomas.
-                        </li>
-                        <li>
-                            Referencias: Álvaro Hernández Casillas (antiguo jefe de proyecto en Stratesys).
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- APTITUDES -->
-                <div class="seccion">
-                    <h2>APTITUDES / SOFT SKILLS</h2>
-                    <ul class="lista-generica secondary-color">
-                        <li>
-                            Trabajo en equipo.
-                        </li>
-                        <li>
-                            Comunicación efectiva.
-                        </li>
-                        <li>
-                            Responsable y puntual.
-                        </li>
-                        <li>
-                            Adaptabilidad y proactividad.
-                        </li>
-                        <li>
-                            Trabajo duro.
-                        </li>
-                    </ul>
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <div>
+                                <span class="exp-role">Desarrollador Full Stack</span>
+                                <span class="exp-company">ICP Logistics</span>
+                            </div>
+                            <span class="exp-date">abr 2023 · jun 2023</span>
+                        </div>
+                        <ul>
+                            <li>Aplicación web para gestionar reservas y promociones de hoteles con Angular, .NET y SQL Server.</li>
+                            <li>Resolución de incidencias y desarrollo de evolutivos durante todo el ciclo de vida del software.</li>
+                        </ul>
+                        <div class="exp-apps">
+                            <h4>Aplicaciones desarrolladas:</h4>
+                            <ul>
+                                <li>Página web para gestión hotelera como proyecto de fin de curso.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </main>
+            </div>
+        </section>
+
     </div>
-</body>
 
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
 </html>
