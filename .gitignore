@@ -1,0 +1,3 @@
+.env
+scripts/github-repos.js
+__pycache__/
